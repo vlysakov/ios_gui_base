@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login Form Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginFormController" customModule="vk_lysakov" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guc-BO-b6i">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nRZ-ae-1bW">
+                                        <rect key="frame" x="52" y="287" width="310" height="68"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e-mail или номер телефона" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zSo-4Z-i7K" customClass="ValidateTextField" customModule="vk_lysakov" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="310" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="mistake" value="Неверный e-mail или номер телефона"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderMistakeColor">
+                                                        <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderEmptyColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="valueRequired" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderFilledColor">
+                                                        <color key="value" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="expression">
+                                                        <string key="value">(?:[a-zA-Z0-9!#$%\&amp;‘*+/=?\^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%\&amp;'*+/=?\^_`{|}~-]+)*|\"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])|^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$</string>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="validateDelegates" destination="d4Y-8B-gbN" collectionClass="NSMutableArray" id="5b8-sK-jov"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="passwordTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cq7-ZM-Hv8" customClass="PasswordTextField" customModule="vk_lysakov" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="34" width="310" height="34"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="showImage" value="eye" catalog="system"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="hideImage" value="eye.slash" catalog="system"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="mistake" value=""/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderMistakeColor">
+                                                        <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderEmptyColor">
+                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderFilledColor">
+                                                        <color key="value" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                        <color key="value" name="Silver"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="valueRequired" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="expression" value=".*"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="validateDelegates" destination="d4Y-8B-gbN" collectionClass="NSMutableArray" id="e17-Hd-5EG"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="310" id="dup-54-m7N"/>
+                                        </constraints>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vk87" translatesAutoresizingMaskIntoConstraints="NO" id="SeL-tS-kte">
+                                        <rect key="frame" x="163.5" y="100" width="87" height="87"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsz-65-Po1">
+                                        <rect key="frame" x="52" y="387" width="310" height="30"/>
+                                        <color key="backgroundColor" red="0.26271280650000001" green="0.4961513877" blue="0.7701597214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Войти">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBound" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GcG-N6-e2g"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SeL-tS-kte" firstAttribute="trailing" secondItem="guc-BO-b6i" secondAttribute="trailing" constant="-163.5" id="2zg-6i-XuH"/>
+                                    <constraint firstItem="dsz-65-Po1" firstAttribute="bottom" secondItem="guc-BO-b6i" secondAttribute="bottom" constant="20" id="IUE-3F-PX9"/>
+                                    <constraint firstItem="SeL-tS-kte" firstAttribute="centerX" secondItem="guc-BO-b6i" secondAttribute="centerX" id="KxT-vf-BPt"/>
+                                    <constraint firstItem="dsz-65-Po1" firstAttribute="width" secondItem="nRZ-ae-1bW" secondAttribute="width" id="RHx-dV-E0Q"/>
+                                    <constraint firstItem="SeL-tS-kte" firstAttribute="top" secondItem="guc-BO-b6i" secondAttribute="top" constant="100" id="U2r-7o-CPZ"/>
+                                    <constraint firstItem="nRZ-ae-1bW" firstAttribute="centerX" secondItem="SeL-tS-kte" secondAttribute="centerX" id="dIj-UI-RNT"/>
+                                    <constraint firstItem="dsz-65-Po1" firstAttribute="top" secondItem="nRZ-ae-1bW" secondAttribute="bottom" constant="32" id="ddE-zR-Tdf"/>
+                                    <constraint firstItem="dsz-65-Po1" firstAttribute="centerX" secondItem="SeL-tS-kte" secondAttribute="centerX" id="hzd-8u-GGj"/>
+                                    <constraint firstItem="nRZ-ae-1bW" firstAttribute="top" secondItem="SeL-tS-kte" secondAttribute="bottom" constant="100" id="ntQ-FM-Q3w"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="K5H-SX-pfw"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="rHF-yZ-hVu"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ae7-o2-7WA"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="guc-BO-b6i" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1ev-Be-arq"/>
+                            <constraint firstItem="guc-BO-b6i" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="GdS-nk-KSn"/>
+                            <constraint firstItem="guc-BO-b6i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PIM-yg-3dZ"/>
+                            <constraint firstItem="guc-BO-b6i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="frg-o3-hx4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginTextField" destination="zSo-4Z-i7K" id="Vxr-80-1Wd"/>
+                        <outlet property="passwordTextField" destination="Cq7-ZM-Hv8" id="kvQ-QQ-hSp"/>
+                        <outlet property="scrollView" destination="guc-BO-b6i" id="NhX-x5-ATT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="d4Y-8B-gbN" customClass="ValidationManager" customModule="vk_lysakov" customModuleProvider="target">
+                    <connections>
+                        <outletCollection property="managedControls" destination="dsz-65-Po1" collectionClass="NSMutableArray" id="Kma-2Q-B1v"/>
+                        <outletCollection property="verifiedControls" destination="Cq7-ZM-Hv8" collectionClass="NSMutableArray" id="mHb-7X-2aS"/>
+                        <outletCollection property="verifiedControls" destination="zSo-4Z-i7K" collectionClass="NSMutableArray" id="ivB-b0-Ekj"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="eye" catalog="system" width="128" height="81"/>
+        <image name="eye.slash" catalog="system" width="128" height="86"/>
+        <image name="vk87" width="87" height="87"/>
+        <namedColor name="Silver">
+            <color red="0.5568627451" green="0.59999999999999998" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
