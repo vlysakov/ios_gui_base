@@ -12,6 +12,12 @@
 		22347891245AC0A600BBF650 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22347890245AC0A600BBF650 /* UIViewExtension.swift */; };
 		22347893245AC89C00BBF650 /* ValidateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22347892245AC89C00BBF650 /* ValidateTextField.swift */; };
 		224392962459C1DC003A305D /* PasswordTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224392952459C1DC003A305D /* PasswordTextFiled.swift */; };
+		2265728724658021008C30DE /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265728624658021008C30DE /* UsersViewController.swift */; };
+		226572892465888F008C30DE /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226572882465888F008C30DE /* UserViewCell.swift */; };
+		2265728B24658E0F008C30DE /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265728A24658E0F008C30DE /* GroupViewController.swift */; };
+		2265728D24658E51008C30DE /* GroupViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265728C24658E51008C30DE /* GroupViewCell.swift */; };
+		2265728F24659672008C30DE /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265728E24659672008C30DE /* AddGroupViewController.swift */; };
+		22657291246597F2008C30DE /* AddGroupViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22657290246597F2008C30DE /* AddGroupViewCell.swift */; };
 		22F75EC82456ED4300FC2128 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F75EC72456ED4300FC2128 /* AppDelegate.swift */; };
 		22F75ECA2456ED4300FC2128 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F75EC92456ED4300FC2128 /* SceneDelegate.swift */; };
 		22F75ECF2456ED4300FC2128 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F75ECD2456ED4300FC2128 /* Main.storyboard */; };
@@ -37,6 +43,12 @@
 		22347890245AC0A600BBF650 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		22347892245AC89C00BBF650 /* ValidateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateTextField.swift; sourceTree = "<group>"; };
 		224392952459C1DC003A305D /* PasswordTextFiled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFiled.swift; sourceTree = "<group>"; };
+		2265728624658021008C30DE /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		226572882465888F008C30DE /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
+		2265728A24658E0F008C30DE /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		2265728C24658E51008C30DE /* GroupViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewCell.swift; sourceTree = "<group>"; };
+		2265728E24659672008C30DE /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
+		22657290246597F2008C30DE /* AddGroupViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewCell.swift; sourceTree = "<group>"; };
 		22F75EC42456ED4300FC2128 /* vk_lysakov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vk_lysakov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F75EC72456ED4300FC2128 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22F75EC92456ED4300FC2128 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +88,12 @@
 				2234788E245ABFCA00BBF650 /* ValidationManager.swift */,
 				22347890245AC0A600BBF650 /* UIViewExtension.swift */,
 				22347892245AC89C00BBF650 /* ValidateTextField.swift */,
+				2265728624658021008C30DE /* UsersViewController.swift */,
+				226572882465888F008C30DE /* UserViewCell.swift */,
+				2265728A24658E0F008C30DE /* GroupViewController.swift */,
+				2265728C24658E51008C30DE /* GroupViewCell.swift */,
+				22657290246597F2008C30DE /* AddGroupViewCell.swift */,
+				2265728E24659672008C30DE /* AddGroupViewController.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -224,12 +242,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				2234788F245ABFCA00BBF650 /* ValidationManager.swift in Sources */,
+				226572892465888F008C30DE /* UserViewCell.swift in Sources */,
+				22657291246597F2008C30DE /* AddGroupViewCell.swift in Sources */,
+				2265728D24658E51008C30DE /* GroupViewCell.swift in Sources */,
 				22F75EEA2456EE1300FC2128 /* LoginFormController.swift in Sources */,
+				2265728B24658E0F008C30DE /* GroupViewController.swift in Sources */,
 				22F75EC82456ED4300FC2128 /* AppDelegate.swift in Sources */,
+				2265728F24659672008C30DE /* AddGroupViewController.swift in Sources */,
 				2234788D245ABF5500BBF650 /* StringExtensions.swift in Sources */,
 				22347891245AC0A600BBF650 /* UIViewExtension.swift in Sources */,
 				22347893245AC89C00BBF650 /* ValidateTextField.swift in Sources */,
 				224392962459C1DC003A305D /* PasswordTextFiled.swift in Sources */,
+				2265728724658021008C30DE /* UsersViewController.swift in Sources */,
 				22F75ECA2456ED4300FC2128 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
