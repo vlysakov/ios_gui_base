@@ -9,7 +9,9 @@
 import UIKit
 
 class UsersViewController: UITableViewController {
-
+    
+    var users = TestData.data.users
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -35,15 +37,33 @@ class UsersViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return users.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserViewCell
         
-        cell.userNameLabel.text = "User " + String(indexPath.row)
-
+        cell.userNameLabel.text = users[indexPath.row].firstName + " " + users[indexPath.row].secondName
+        cell.avatarImage.image = users[indexPath.row].avatar
+        cell.avatarImage.layer.cornerRadius = cell.avatarImage.frame.size.height / 2
+        cell.avatarImage.clipsToBounds = true
+        #warning("чуть позде реализовать отдельным CALayer тени с округлением углов")
+//        cell.avatarImage.layer.shadowColor = UIColor.black.cgColor
+//        cell.avatarImage.layer.shadowOpacity = 0.5
+//        cell.avatarImage.layer.shadowRadius = cell.avatarImage.frame.size.height / 16
+//        cell.avatarImage.layer.shadowOffset = CGSize.zero
+        cell.avatarImage.layer.masksToBounds = true
+//        cell.avatarImage.backgroundColor = UIColor.darkGray
+        
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "showUserDetail" else { return }
+        guard let dst = segue.destination as? UserDetailCollectionViewController else { return }
+        if let userIndex = tableView.indexPathForSelectedRow {
+            dst.user = users[userIndex.row]
+        }
     }
 
     /*

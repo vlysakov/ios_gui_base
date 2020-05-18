@@ -19,8 +19,8 @@ extension UIView {
         }
         set {
             self.layer.borderColor = newValue?.cgColor
-           }
-       }
+        }
+    }
        
     @IBInspectable public var borderWidth:CGFloat {
            get {
@@ -42,6 +42,4 @@ extension UIView {
        }
 }
 
-//^([a-zA-Z0-9!@#$%^&+/=?_`'{|}~\-,;\\.\(\)\:\[\]]){8,100}$
-//^([a-zA-Z0-9@#$%^&+/=?_`'{|}~\-,;\\.\(\)\:\[\]])$
 

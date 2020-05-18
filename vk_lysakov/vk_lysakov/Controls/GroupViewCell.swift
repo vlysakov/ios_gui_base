@@ -9,19 +9,9 @@
 import UIKit
 
 class GroupViewCell: UITableViewCell {
-    
+    var id = 0
     @IBOutlet weak var groupNameLabel: UILabel!
+    @IBOutlet weak var groupImageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
 

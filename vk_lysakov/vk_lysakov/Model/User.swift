@@ -1,9 +1,20 @@
-//
-//  User.swift
-//  vk_lysakov
-//
-//  Created by Slava V. Lysakov on 15.05.2020.
-//  Copyright © 2020 Slava V. Lysakov. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class User {
+    let login :String
+    let firstName :String
+    let secondName :String
+    let avatar: UIImage?
+    var foto: [String]?
+    
+    var fullName: String { firstName + " " + secondName }
+    
+    init (login: String, firstName: String, secondName: String = "", avatar: UIImage? = nil) {
+        self.login = login
+        self.firstName = firstName
+        self.secondName = secondName
+        self.avatar = avatar
+        self.foto = nil
+    }
+    
+}

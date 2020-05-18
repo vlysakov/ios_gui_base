@@ -18,6 +18,11 @@
 		2265728D24658E51008C30DE /* GroupViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265728C24658E51008C30DE /* GroupViewCell.swift */; };
 		2265728F24659672008C30DE /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265728E24659672008C30DE /* AddGroupViewController.swift */; };
 		22657291246597F2008C30DE /* AddGroupViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22657290246597F2008C30DE /* AddGroupViewCell.swift */; };
+		2283EB342472D8CF00420A47 /* UserDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2283EB332472D8CF00420A47 /* UserDetailViewCell.swift */; };
+		2283EB362472D99D00420A47 /* UserDetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2283EB352472D99D00420A47 /* UserDetailCollectionViewController.swift */; };
+		2283EB382472DF2500420A47 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2283EB372472DF2500420A47 /* TestData.swift */; };
+		22852FCC246E8CFB00FE9DA8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22852FCB246E8CFB00FE9DA8 /* User.swift */; };
+		22852FCE246E8FAC00FE9DA8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22852FCD246E8FAC00FE9DA8 /* Group.swift */; };
 		22F75EC82456ED4300FC2128 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F75EC72456ED4300FC2128 /* AppDelegate.swift */; };
 		22F75ECA2456ED4300FC2128 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F75EC92456ED4300FC2128 /* SceneDelegate.swift */; };
 		22F75ECF2456ED4300FC2128 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F75ECD2456ED4300FC2128 /* Main.storyboard */; };
@@ -49,6 +54,11 @@
 		2265728C24658E51008C30DE /* GroupViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewCell.swift; sourceTree = "<group>"; };
 		2265728E24659672008C30DE /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 		22657290246597F2008C30DE /* AddGroupViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewCell.swift; sourceTree = "<group>"; };
+		2283EB332472D8CF00420A47 /* UserDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewCell.swift; sourceTree = "<group>"; };
+		2283EB352472D99D00420A47 /* UserDetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailCollectionViewController.swift; sourceTree = "<group>"; };
+		2283EB372472DF2500420A47 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		22852FCB246E8CFB00FE9DA8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		22852FCD246E8FAC00FE9DA8 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		22F75EC42456ED4300FC2128 /* vk_lysakov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vk_lysakov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F75EC72456ED4300FC2128 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22F75EC92456ED4300FC2128 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,8 +104,20 @@
 				2265728C24658E51008C30DE /* GroupViewCell.swift */,
 				22657290246597F2008C30DE /* AddGroupViewCell.swift */,
 				2265728E24659672008C30DE /* AddGroupViewController.swift */,
+				2283EB332472D8CF00420A47 /* UserDetailViewCell.swift */,
+				2283EB352472D99D00420A47 /* UserDetailCollectionViewController.swift */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		22852FCA246E8C9700FE9DA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22852FCB246E8CFB00FE9DA8 /* User.swift */,
+				22852FCD246E8FAC00FE9DA8 /* Group.swift */,
+				2283EB372472DF2500420A47 /* TestData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		22F75EBB2456ED4300FC2128 = {
@@ -119,6 +141,7 @@
 		22F75EC62456ED4300FC2128 /* vk_lysakov */ = {
 			isa = PBXGroup;
 			children = (
+				22852FCA246E8C9700FE9DA8 /* Model */,
 				224392922459BA94003A305D /* Controls */,
 				22F75EC72456ED4300FC2128 /* AppDelegate.swift */,
 				22F75EC92456ED4300FC2128 /* SceneDelegate.swift */,
@@ -244,14 +267,19 @@
 				2234788F245ABFCA00BBF650 /* ValidationManager.swift in Sources */,
 				226572892465888F008C30DE /* UserViewCell.swift in Sources */,
 				22657291246597F2008C30DE /* AddGroupViewCell.swift in Sources */,
+				22852FCE246E8FAC00FE9DA8 /* Group.swift in Sources */,
 				2265728D24658E51008C30DE /* GroupViewCell.swift in Sources */,
 				22F75EEA2456EE1300FC2128 /* LoginFormController.swift in Sources */,
 				2265728B24658E0F008C30DE /* GroupViewController.swift in Sources */,
 				22F75EC82456ED4300FC2128 /* AppDelegate.swift in Sources */,
 				2265728F24659672008C30DE /* AddGroupViewController.swift in Sources */,
+				22852FCC246E8CFB00FE9DA8 /* User.swift in Sources */,
 				2234788D245ABF5500BBF650 /* StringExtensions.swift in Sources */,
 				22347891245AC0A600BBF650 /* UIViewExtension.swift in Sources */,
 				22347893245AC89C00BBF650 /* ValidateTextField.swift in Sources */,
+				2283EB382472DF2500420A47 /* TestData.swift in Sources */,
+				2283EB342472D8CF00420A47 /* UserDetailViewCell.swift in Sources */,
+				2283EB362472D99D00420A47 /* UserDetailCollectionViewController.swift in Sources */,
 				224392962459C1DC003A305D /* PasswordTextFiled.swift in Sources */,
 				2265728724658021008C30DE /* UsersViewController.swift in Sources */,
 				22F75ECA2456ED4300FC2128 /* SceneDelegate.swift in Sources */,

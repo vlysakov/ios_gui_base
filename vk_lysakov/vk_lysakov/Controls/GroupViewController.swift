@@ -29,17 +29,40 @@ class GroupViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return usedGroups.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupViewCell", for: indexPath) as! GroupViewCell
         
-        cell.groupNameLabel.text = "Group " + String(indexPath.row)
-
+//        cell.id =
+        cell.groupNameLabel.text = usedGroups[indexPath.row].name
+        cell.groupImageView.image = usedGroups[indexPath.row].image
+        cell.groupImageView.layer.cornerRadius = cell.groupImageView.frame.size.height / 2
+        cell.groupImageView.clipsToBounds = true
 
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? AddGroupViewController else { return }
+        destination.closure = { [weak self] group in
+            usedGroups.append(group)
+            self?.tableView.reloadData()
+        }
+    }
+    
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            let grp = usedGroups[indexPath.row]
+            usedGroups.remove(at: indexPath.row)
+            unusedGroups.append(grp)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -49,17 +72,8 @@ class GroupViewController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
+    
+
 
     /*
     // Override to support rearranging the table view.
