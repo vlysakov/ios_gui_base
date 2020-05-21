@@ -1,5 +1,5 @@
 //
-//  GroupViewCell.swift
+//  AddGroupViewCell.swift
 //  vk_lysakov
 //
 //  Created by Slava V. Lysakov on 08.05.2020.
@@ -8,10 +8,9 @@
 
 import UIKit
 
-class GroupViewCell: UITableViewCell {
-    var id = 0
+class AddGroupViewCell: UITableViewCell {
+
     @IBOutlet weak var groupNameLabel: UILabel!
-    @IBOutlet weak var groupImageView: UIImageView!
+    @IBOutlet weak var groupImageView: UIAvatarImageView!
     
 }
-

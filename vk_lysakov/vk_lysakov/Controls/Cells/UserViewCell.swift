@@ -10,7 +10,8 @@ import UIKit
 
 class UserViewCell: UITableViewCell {
    
-    @IBOutlet weak var avatarImage: UIImageView!
+//    @IBOutlet weak var avatarImage: UIAvatarImage!
+    @IBOutlet weak var avatarImageView: UIAvatarImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     
     

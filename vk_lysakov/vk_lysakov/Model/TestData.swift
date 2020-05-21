@@ -6,7 +6,7 @@ var unusedGroups = [Group]()
 
 class TestData {
     
-    var users = [User]()
+    var users = [(String,[User])]()
     
     static let data: TestData = {
         let instance = TestData()
@@ -20,8 +20,17 @@ class TestData {
         
         for i in logins.indices {
             let u = User(login: logins[i], firstName: firstNames[i], secondName: secondNames[i], avatar: UIImage(named: String(format: "%02d", i+1)))
-            u.foto = (0...5).map { _ in String(format: "%02d", Int.random(in: 1...16)) }
-            users.append(u)
+            u.fotos = (0...Int.random(in: 1...16)).map { _ in String(format: "%02d", Int.random(in: 1...16)) }
+                .map{ name in User.Photo(name, Int.random(in: 0...100), Int.random(in: 0...1) != 0 ? false : true) }
+            let sectionName = String(Array(secondNames[i])[0])
+            
+            let ind = users.firstIndex(where: {$0.0 == sectionName})
+            if ind == nil {
+                users.append((sectionName,[u]))
+            } else {
+                users[ind!].1.append(u)
+            }
+            users.sort{$0.0 < $1.0}
             
         }
         

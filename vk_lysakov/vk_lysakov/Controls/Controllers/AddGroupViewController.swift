@@ -1,5 +1,5 @@
 //
-//  GroupViewController.swift
+//  AddGroupViewController.swift
 //  vk_lysakov
 //
 //  Created by Slava V. Lysakov on 08.05.2020.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class GroupViewController: UITableViewController {
+class AddGroupViewController: UITableViewController {
+    
+    var closure: ((Group) -> ())?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,40 +31,26 @@ class GroupViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return usedGroups.count
+        return unusedGroups.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupViewCell", for: indexPath) as! GroupViewCell
-        
-//        cell.id =
-        cell.groupNameLabel.text = usedGroups[indexPath.row].name
-        cell.groupImageView.image = usedGroups[indexPath.row].image
-        cell.groupImageView.layer.cornerRadius = cell.groupImageView.frame.size.height / 2
-        cell.groupImageView.clipsToBounds = true
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddGroupViewCell", for: indexPath) as! AddGroupViewCell
+
+        cell.groupNameLabel.text = unusedGroups[indexPath.row].name
+        cell.groupImageView.image = unusedGroups[indexPath.row].image
+//        cell.groupImageView.layer.cornerRadius = cell.groupImageView.frame.size.height / 2
+//        cell.groupImageView.clipsToBounds = true
 
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? AddGroupViewController else { return }
-        destination.closure = { [weak self] group in
-            usedGroups.append(group)
-            self?.tableView.reloadData()
-        }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let group = unusedGroups[indexPath.row]
+        unusedGroups.remove(at: indexPath.row)
+        navigationController?.popViewController(animated: true)
+        closure?(group)
     }
-    
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            let grp = usedGroups[indexPath.row]
-            usedGroups.remove(at: indexPath.row)
-            unusedGroups.append(grp)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-    }
-    
 
     /*
     // Override to support conditional editing of the table view.
@@ -71,9 +59,6 @@ class GroupViewController: UITableViewController {
         return true
     }
     */
-
-    
-
 
     /*
     // Override to support rearranging the table view.

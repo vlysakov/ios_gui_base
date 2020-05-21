@@ -14,6 +14,7 @@ class UsersViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,37 +24,24 @@ class UsersViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        //navigationController?.setNavigationBarHidden(false, animated: true)
-        
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return users.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return users.count
+        return users[section].1.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserViewCell
         
-        cell.userNameLabel.text = users[indexPath.row].firstName + " " + users[indexPath.row].secondName
-        cell.avatarImage.image = users[indexPath.row].avatar
-        cell.avatarImage.layer.cornerRadius = cell.avatarImage.frame.size.height / 2
-        cell.avatarImage.clipsToBounds = true
-        #warning("чуть позде реализовать отдельным CALayer тени с округлением углов")
-//        cell.avatarImage.layer.shadowColor = UIColor.black.cgColor
-//        cell.avatarImage.layer.shadowOpacity = 0.5
-//        cell.avatarImage.layer.shadowRadius = cell.avatarImage.frame.size.height / 16
-//        cell.avatarImage.layer.shadowOffset = CGSize.zero
-        cell.avatarImage.layer.masksToBounds = true
-//        cell.avatarImage.backgroundColor = UIColor.darkGray
+        cell.userNameLabel.text = users[indexPath.section].1[indexPath.row].fullName
+        cell.avatarImageView.image = users[indexPath.section].1[indexPath.row].avatar
         
         return cell
     }
@@ -61,9 +49,17 @@ class UsersViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "showUserDetail" else { return }
         guard let dst = segue.destination as? UserDetailCollectionViewController else { return }
-        if let userIndex = tableView.indexPathForSelectedRow {
-            dst.user = users[userIndex.row]
+        if let indexPath = tableView.indexPathForSelectedRow {
+            dst.user = users[indexPath.section].1[indexPath.row]
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return users[section].0
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return users.map{$0.0}
     }
 
     /*
@@ -101,14 +97,6 @@ class UsersViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+ 
 
 }

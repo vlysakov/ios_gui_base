@@ -1,11 +1,3 @@
-//
-//  UIViewExtension.swift
-//  vk_lysakov
-//
-//  Created by Slava V. Lysakov on 30.04.2020.
-//  Copyright © 2020 Slava V. Lysakov. All rights reserved.
-//
-
 import UIKit
 
 extension UIView {
@@ -23,18 +15,14 @@ extension UIView {
     }
        
     @IBInspectable public var borderWidth:CGFloat {
-           get {
-            return self.layer.borderWidth
-           }
+           get { self.layer.borderWidth }
            set {
                self.layer.borderWidth = newValue
             }
        }
     
        @IBInspectable public var cornerRadius:CGFloat {
-           get {
-               return layer.cornerRadius
-           }
+           get { layer.cornerRadius }
            set {
                layer.cornerRadius = newValue
                layer.masksToBounds = newValue > 0
