@@ -13,21 +13,7 @@ class LoginFormController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
-//    @IBAction func loginButtonPressed(_ sender: Any) {
-//        let login = loginTextField.text!
-//        let passwd = passwordTextField.text!
-//        
-//        if login == "admin@mail.ru" && passwd == "123456" {
-//            let alert = UIAlertController(title: "Уведомление", message: "Успешная авторизация", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//            self.present(alert, animated: true)
-//        } else {
-//            let alert = UIAlertController(title: "Ошибка", message: "Неверный логин или пароль", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//            self.present(alert, animated: true)
-//        }
-//    }
+
     
     // Когда клавиатура появляется
     @objc func keyboardWasShown (notification: Notification) {

@@ -2,9 +2,10 @@ import UIKit
 
 class PhotoViewController: UIViewController {
 
-    @IBOutlet weak var likeButton: UILikeButton!
     var photo: User.Photo?
     
+    @IBOutlet weak var likeButton: UILikeButton!
+    @IBOutlet weak var shareButton: UIShareButton!
     @IBOutlet weak var photoImageView: UIImageView!
     
     override func viewDidLoad() {
@@ -13,6 +14,7 @@ class PhotoViewController: UIViewController {
             photoImageView.image = UIImage(named: ph.name)!
             likeButton.countLike = ph.likeCount
             likeButton.likeStatus = ph.isLiked
+            shareButton.sharedImage = photoImageView.image
         }
     }
     
@@ -21,6 +23,10 @@ class PhotoViewController: UIViewController {
             ph.isLiked = likeButton.likeStatus
             ph.likeCount = likeButton.countLike
         }
+    }
+    
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        
     }
     
 }

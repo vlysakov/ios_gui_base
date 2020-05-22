@@ -56,6 +56,18 @@ import UIKit
         countLike += (likeStatus ? -1 : 1)
         likeStatus = !likeStatus
         setupButton()
+        flash()
+    }
+    
+    func flash() {
+        let flash = CABasicAnimation(keyPath: "opacity")
+        flash.duration = 0.3
+        flash.fromValue = 1
+        flash.toValue = 0.1
+        flash.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        flash.autoreverses = true
+        flash.repeatCount = 2
+        layer.add(flash, forKey: nil)
     }
 
 }

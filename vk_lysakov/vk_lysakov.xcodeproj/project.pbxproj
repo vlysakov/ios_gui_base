@@ -26,6 +26,8 @@
 		22852FCC246E8CFB00FE9DA8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22852FCB246E8CFB00FE9DA8 /* User.swift */; };
 		22852FCE246E8FAC00FE9DA8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22852FCD246E8FAC00FE9DA8 /* Group.swift */; };
 		22987FFB2473B2AA0070EA89 /* UIAvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22987FFA2473B2AA0070EA89 /* UIAvatarImage.swift */; };
+		22DB17A72477C7A700708A7F /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB17A62477C7A700708A7F /* CustomTabBarController.swift */; };
+		22DB17A92477CC3B00708A7F /* UIShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB17A82477CC3B00708A7F /* UIShareButton.swift */; };
 		22F75EC82456ED4300FC2128 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F75EC72456ED4300FC2128 /* AppDelegate.swift */; };
 		22F75ECA2456ED4300FC2128 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F75EC92456ED4300FC2128 /* SceneDelegate.swift */; };
 		22F75ECF2456ED4300FC2128 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F75ECD2456ED4300FC2128 /* Main.storyboard */; };
@@ -65,6 +67,8 @@
 		22852FCB246E8CFB00FE9DA8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		22852FCD246E8FAC00FE9DA8 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		22987FFA2473B2AA0070EA89 /* UIAvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAvatarImage.swift; sourceTree = "<group>"; };
+		22DB17A62477C7A700708A7F /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		22DB17A82477CC3B00708A7F /* UIShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIShareButton.swift; sourceTree = "<group>"; };
 		22F75EC42456ED4300FC2128 /* vk_lysakov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vk_lysakov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F75EC72456ED4300FC2128 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22F75EC92456ED4300FC2128 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				22987FFA2473B2AA0070EA89 /* UIAvatarImage.swift */,
 				2272629724751EF700F7EFDB /* TextFields */,
 				2221DE052475AE6500A4FF54 /* UILikeButton.swift */,
+				22DB17A62477C7A700708A7F /* CustomTabBarController.swift */,
+				22DB17A82477CC3B00708A7F /* UIShareButton.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 			files = (
 				2234788F245ABFCA00BBF650 /* ValidationManager.swift in Sources */,
 				226572892465888F008C30DE /* UserViewCell.swift in Sources */,
+				22DB17A72477C7A700708A7F /* CustomTabBarController.swift in Sources */,
 				22657291246597F2008C30DE /* AddGroupViewCell.swift in Sources */,
 				22852FCE246E8FAC00FE9DA8 /* Group.swift in Sources */,
 				2221DE062475AE6500A4FF54 /* UILikeButton.swift in Sources */,
@@ -331,6 +338,7 @@
 				22347893245AC89C00BBF650 /* ValidateTextField.swift in Sources */,
 				2283EB382472DF2500420A47 /* TestData.swift in Sources */,
 				2283EB342472D8CF00420A47 /* UserDetailViewCell.swift in Sources */,
+				22DB17A92477CC3B00708A7F /* UIShareButton.swift in Sources */,
 				2283EB362472D99D00420A47 /* UserDetailCollectionViewController.swift in Sources */,
 				224392962459C1DC003A305D /* PasswordTextFiled.swift in Sources */,
 				2265728724658021008C30DE /* UsersViewController.swift in Sources */,
