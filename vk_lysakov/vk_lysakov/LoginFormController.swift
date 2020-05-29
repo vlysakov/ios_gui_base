@@ -14,10 +14,8 @@ class LoginFormController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
 
-    
     // Когда клавиатура появляется
     @objc func keyboardWasShown (notification: Notification) {
-        print("Keyboard on")
         // Получаем размер клавиатуры
         let info = notification.userInfo! as NSDictionary
         let kbSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size
@@ -29,12 +27,10 @@ class LoginFormController: UIViewController {
     
     //Когда клавиатура исчезает
     @objc func keyboardWillBeHidden (notification: Notification) {
-        print("Keyboard off")
         // Устанавливаем отступ внизу UIScrollView, равный 0
         let contentInsets = UIEdgeInsets .zero
         scrollView?.contentInset = contentInsets
     }
-    
     
     @IBAction func closeKeyboard(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)

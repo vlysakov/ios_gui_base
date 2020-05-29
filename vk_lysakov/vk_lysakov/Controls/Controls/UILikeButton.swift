@@ -2,12 +2,12 @@ import UIKit
 
 @IBDesignable class UILikeButton: UIButton {
     
-    @IBInspectable var unlikeImage: UIImage? {
+    @IBInspectable var unlikeImage: UIImage? = UIImage(named: "liked_outline_24") {
         didSet {
             setupButton()
         }
     }
-    @IBInspectable var likeImage: UIImage? {
+    @IBInspectable var likeImage: UIImage? = UIImage(named: "like_outline_24") {
         didSet {
             setupButton()
         }
@@ -38,16 +38,19 @@ import UIKit
     }
     
     override func awakeFromNib() {
-        super.awakeFromNib()
-
+        self.setImage(likeImage, for: .normal)
+    //    currentImage = UIImage(named: "like_outline_24")
+        self.setBackgroundImage(likeStatus ? likeImage : unlikeImage, for: .normal)
         setupButton()
+        super.awakeFromNib()
     }
 
     override var intrinsicContentSize: CGSize { CGSize(width: 64.0, height: 24.0) }
     
     
     private func setupButton() {
-        self.setImage(likeStatus ? likeImage : unlikeImage, for: .normal)
+//        self.setImage(likeStatus ? likeImage : unlikeImage, for: .normal)
+        
         self.setTitle(countLike == 0 ? "" : String(countLike), for: .normal)
         self.setNeedsDisplay()
     }
