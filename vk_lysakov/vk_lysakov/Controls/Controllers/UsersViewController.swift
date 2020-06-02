@@ -4,7 +4,6 @@ class UsersViewController: UITableViewController, UISearchBarDelegate {
     
     var data = TestData.data.users
     var users: [String:[User]] = [:]
-    
     var searchBar = UISearchBar()
     
     override func viewDidLoad() {
@@ -12,7 +11,9 @@ class UsersViewController: UITableViewController, UISearchBarDelegate {
         searchBar.delegate = self
         searchBar.placeholder = "Поиск"
         searchBar.sizeToFit()
-        navigationItem.titleView = searchBar
+        searchBar.showsCancelButton = true
+        searchBar.searchBarStyle = .minimal
+        //navigationItem.titleView = searchBar
         //tableView.tableHeaderView = searchBar
         navigationItem.hidesSearchBarWhenScrolling = true
         self.tableView.contentInset.bottom = self.tabBarController?.tabBar.frame.height ?? 0
@@ -64,7 +65,6 @@ class UsersViewController: UITableViewController, UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.loadData(searchText)
         tableView.reloadData()
-        
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
@@ -79,6 +79,7 @@ class UsersViewController: UITableViewController, UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
+        hideSearchBar()
 //        self.view.endEditing(true)
     }
 
@@ -94,6 +95,36 @@ class UsersViewController: UITableViewController, UISearchBarDelegate {
         sections.forEach { ch in users[ch] = dt.filter{$0.secondName.first?.uppercased() == ch} }
 
     }
-
+    
+    //MARK: SearchBar Animation
+    
+    @IBOutlet weak var searchButton: UIBarButtonItem!
+    @IBAction func searchButtonPressed(_ sender: Any) {
+        showSearchBar()
+    }
+    var titleView: UIView?
+    
+    func showSearchBar() {
+        searchBar.alpha = 0
+        titleView = navigationItem.titleView
+        navigationItem.titleView = searchBar
+        navigationItem.setRightBarButton(nil, animated: true)
+        
+        UIView .animate(withDuration: 0.5,
+                        animations: { self.searchBar.alpha = 1 },
+                        completion: { finished in self.searchBar.becomeFirstResponder() }
+        )
+    }
+    
+    func hideSearchBar() {
+        navigationItem.setRightBarButton(searchButton, animated: true)
+        titleView?.alpha = 0
+        UIView .animate(withDuration: 0.3,
+                        animations: {
+                            self.navigationItem.titleView = self.titleView
+                            self.titleView?.alpha = 1 },
+                        completion: { finished in })
+    }
+    
 }
 

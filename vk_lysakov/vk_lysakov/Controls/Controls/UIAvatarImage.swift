@@ -39,6 +39,8 @@ import UIKit
         self.layer.cornerRadius = cornerRadius
         self.layer.borderWidth = borderWidth
         self.layer.borderColor = borderColor?.cgColor
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapAction))
+        addGestureRecognizer(tap)
     }
     
     fileprivate func layoutImage() {
@@ -60,6 +62,20 @@ import UIKit
         self.layer.shadowOffset = shadowOffset
         self.layer.shadowRadius = shadowRadius
         self.layer.shadowPath = UIBezierPath(roundedRect: self.layer.bounds, cornerRadius: cornerRadius).cgPath
+    }
+    
+    @objc func tapAction() {
+        print("Yes!!!")
+        UIView .animate(withDuration: 0.75,
+                        animations: {
+                            self.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+                        },
+                        completion: { (finish) in
+                                    UIView.animate(withDuration: 0.75, animations: {
+                                    self.transform = CGAffineTransform.identity
+                                })
+                        })
+
     }
     
 }

@@ -425,7 +425,16 @@
                             <outlet property="delegate" destination="8Rb-mD-g5h" id="Lw8-T3-Sgl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="eHC-1h-sZm"/>
+                    <navigationItem key="navigationItem" id="eHC-1h-sZm">
+                        <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="XJT-k4-GNb">
+                            <connections>
+                                <action selector="searchButtonPressed:" destination="8Rb-mD-g5h" id="GvD-Ch-B1P"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchButton" destination="XJT-k4-GNb" id="nV6-MZ-iSo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmQ-z4-jcu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
