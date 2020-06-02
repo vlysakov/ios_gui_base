@@ -2,7 +2,8 @@ import UIKit
 
 class UIFeedActionPanel: UIView {
     
-    private var stackView: UIStackView?
+    private var stackView = UIStackView()
+    private var photoButton = UIButton()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,12 +21,13 @@ class UIFeedActionPanel: UIView {
     }
     
     private func setup() {
-        stackView = UIStackView()
-        if let sv = stackView {
-            sv.axis = .horizontal
-            sv.alignment = .fill
-            sv.distribution = .fill
-        }
+//        stackView = UIStackView()
+        
+//        if let sv = stackView {
+//            sv.axis = .horizontal
+//            sv.alignment = .fill
+//            sv.distribution = .fill
+//        }
         
     }
 

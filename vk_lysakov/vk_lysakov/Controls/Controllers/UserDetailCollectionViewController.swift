@@ -3,7 +3,7 @@ import UIKit
 class UserDetailCollectionViewController: UICollectionViewController {
     
     var user: User?
-    let itemsPerRow: CGFloat = 2
+    let itemsPerRow: CGFloat = 1
     let sectionInserts = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
 
     override func viewDidLoad() {

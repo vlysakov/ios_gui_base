@@ -36,6 +36,12 @@
 		22F75ED42456ED4500FC2128 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F75ED22456ED4500FC2128 /* LaunchScreen.storyboard */; };
 		22F75EDF2456ED4500FC2128 /* vk_lysakovUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F75EDE2456ED4500FC2128 /* vk_lysakovUITests.swift */; };
 		22F75EEA2456EE1300FC2128 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F75EE92456EE1300FC2128 /* LoginFormController.swift */; };
+		F92253C224853D6800C90AE2 /* FeedsNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92253C124853D6800C90AE2 /* FeedsNewsViewController.swift */; };
+		F92253C424857C4900C90AE2 /* FeedViewCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92253C324857C4900C90AE2 /* FeedViewCellContent.swift */; };
+		F980600C248627EB00D7FB5C /* NewsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F980600B248627EB00D7FB5C /* NewsViewCell.swift */; };
+		F9D0C0A12485000F007CB7AB /* FeedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0C0A02485000F007CB7AB /* FeedViewCell.swift */; };
+		F9D0C0E124852B74007CB7AB /* FeedViewCellFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0C0E024852B74007CB7AB /* FeedViewCellFooter.swift */; };
+		F9D0C0E324852BA1007CB7AB /* FeedViewCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0C0E224852BA1007CB7AB /* FeedViewCellHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +88,12 @@
 		22F75EDE2456ED4500FC2128 /* vk_lysakovUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vk_lysakovUITests.swift; sourceTree = "<group>"; };
 		22F75EE02456ED4500FC2128 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22F75EE92456EE1300FC2128 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
+		F92253C124853D6800C90AE2 /* FeedsNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsNewsViewController.swift; sourceTree = "<group>"; };
+		F92253C324857C4900C90AE2 /* FeedViewCellContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewCellContent.swift; sourceTree = "<group>"; };
+		F980600B248627EB00D7FB5C /* NewsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewCell.swift; sourceTree = "<group>"; };
+		F9D0C0A02485000F007CB7AB /* FeedViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewCell.swift; sourceTree = "<group>"; };
+		F9D0C0E024852B74007CB7AB /* FeedViewCellFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewCellFooter.swift; sourceTree = "<group>"; };
+		F9D0C0E224852BA1007CB7AB /* FeedViewCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewCellHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +128,7 @@
 		2272629324751E2900F7EFDB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F92253C52485803D00C90AE2 /* Feed */,
 				226572882465888F008C30DE /* UserViewCell.swift */,
 				2265728C24658E51008C30DE /* GroupViewCell.swift */,
 				22657290246597F2008C30DE /* AddGroupViewCell.swift */,
@@ -132,6 +145,7 @@
 				2265728E24659672008C30DE /* AddGroupViewController.swift */,
 				2283EB352472D99D00420A47 /* UserDetailCollectionViewController.swift */,
 				2221DDFF2475735700A4FF54 /* PhotoViewController.swift */,
+				F92253C124853D6800C90AE2 /* FeedsNewsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -219,6 +233,18 @@
 				22F75EE02456ED4500FC2128 /* Info.plist */,
 			);
 			path = vk_lysakovUITests;
+			sourceTree = "<group>";
+		};
+		F92253C52485803D00C90AE2 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				F9D0C0E024852B74007CB7AB /* FeedViewCellFooter.swift */,
+				F9D0C0E224852BA1007CB7AB /* FeedViewCellHeader.swift */,
+				F92253C324857C4900C90AE2 /* FeedViewCellContent.swift */,
+				F9D0C0A02485000F007CB7AB /* FeedViewCell.swift */,
+				F980600B248627EB00D7FB5C /* NewsViewCell.swift */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +355,7 @@
 				22657291246597F2008C30DE /* AddGroupViewCell.swift in Sources */,
 				22852FCE246E8FAC00FE9DA8 /* Group.swift in Sources */,
 				2221DE062475AE6500A4FF54 /* UILikeButton.swift in Sources */,
+				F9D0C0E324852BA1007CB7AB /* FeedViewCellHeader.swift in Sources */,
 				2265728D24658E51008C30DE /* GroupViewCell.swift in Sources */,
 				22F75EEA2456EE1300FC2128 /* LoginFormController.swift in Sources */,
 				22987FFB2473B2AA0070EA89 /* UIAvatarImage.swift in Sources */,
@@ -336,13 +363,18 @@
 				22F75EC82456ED4300FC2128 /* AppDelegate.swift in Sources */,
 				2265728F24659672008C30DE /* AddGroupViewController.swift in Sources */,
 				22852FCC246E8CFB00FE9DA8 /* User.swift in Sources */,
+				F92253C224853D6800C90AE2 /* FeedsNewsViewController.swift in Sources */,
 				2221DE002475735700A4FF54 /* PhotoViewController.swift in Sources */,
+				F980600C248627EB00D7FB5C /* NewsViewCell.swift in Sources */,
 				2234788D245ABF5500BBF650 /* StringExtensions.swift in Sources */,
 				22347891245AC0A600BBF650 /* UIViewExtension.swift in Sources */,
+				F9D0C0E124852B74007CB7AB /* FeedViewCellFooter.swift in Sources */,
 				22347893245AC89C00BBF650 /* ValidateTextField.swift in Sources */,
+				F9D0C0A12485000F007CB7AB /* FeedViewCell.swift in Sources */,
 				2283EB382472DF2500420A47 /* TestData.swift in Sources */,
 				2283EB342472D8CF00420A47 /* UserDetailViewCell.swift in Sources */,
 				22DB17A92477CC3B00708A7F /* UIShareButton.swift in Sources */,
+				F92253C424857C4900C90AE2 /* FeedViewCellContent.swift in Sources */,
 				2283EB362472D99D00420A47 /* UserDetailCollectionViewController.swift in Sources */,
 				224392962459C1DC003A305D /* PasswordTextFiled.swift in Sources */,
 				2265728724658021008C30DE /* UsersViewController.swift in Sources */,

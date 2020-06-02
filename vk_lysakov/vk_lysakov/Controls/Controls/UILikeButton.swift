@@ -38,9 +38,7 @@ import UIKit
     }
     
     override func awakeFromNib() {
-        self.setImage(likeImage, for: .normal)
-    //    currentImage = UIImage(named: "like_outline_24")
-        self.setBackgroundImage(likeStatus ? likeImage : unlikeImage, for: .normal)
+
         setupButton()
         super.awakeFromNib()
     }
@@ -49,8 +47,7 @@ import UIKit
     
     
     private func setupButton() {
-//        self.setImage(likeStatus ? likeImage : unlikeImage, for: .normal)
-        
+        self.setImage(likeStatus ? likeImage : unlikeImage, for: .normal)
         self.setTitle(countLike == 0 ? "" : String(countLike), for: .normal)
         self.setNeedsDisplay()
     }

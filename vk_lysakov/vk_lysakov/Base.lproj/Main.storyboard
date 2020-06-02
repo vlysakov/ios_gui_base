@@ -189,7 +189,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="transparent" value="NO"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="s95-fB-eLZ" kind="relationship" relationship="viewControllers" id="ler-8I-idn"/>
+                        <segue destination="4eN-r3-Gg0" kind="relationship" relationship="viewControllers" id="6jX-Nx-BcU"/>
                         <segue destination="LLo-5b-jGv" kind="relationship" relationship="viewControllers" id="ybG-le-ttb"/>
                         <segue destination="hay-Qp-pVL" kind="relationship" relationship="viewControllers" id="GRP-vx-5eU"/>
                     </connections>
@@ -504,7 +504,6 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hg1-bD-pnN" customClass="UILikeButton" customModule="vk_lysakov" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="24"/>
-                                        <state key="normal" title="Button"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="countLike">
                                                 <integer key="value" value="10"/>
@@ -569,40 +568,21 @@
             </objects>
             <point key="canvasLocation" x="1883" y="525"/>
         </scene>
-        <!--Collection View Controller-->
-        <scene sceneID="OIH-7L-NRv">
+        <!--Feeds News View Controller-->
+        <scene sceneID="BVQ-ZC-aRT">
             <objects>
-                <collectionViewController id="8so-bL-oq1" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="0lo-ey-Th6">
+                <viewController id="EGQ-Ss-ApF" customClass="FeedsNewsViewController" customModule="vk_lysakov" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qz7-rh-6KK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cvC-Qb-Oxh">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0xj-sG-mjl">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KUb-4V-7a6">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionViewCellContentView>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="8so-bL-oq1" id="tYs-8c-fYm"/>
-                            <outlet property="delegate" destination="8so-bL-oq1" id="fAb-wx-1wo"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="PQl-ka-fI8"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QqH-DM-9YM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <viewLayoutGuide key="safeArea" id="g0w-Xg-zfA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rGP-fj-gFF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kMc-as-YWa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2824.8000000000002" y="-940.47976011994012"/>
+            <point key="canvasLocation" x="2809" y="-1072"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aRF-Rm-RfW">
@@ -623,64 +603,25 @@
             </objects>
             <point key="canvasLocation" x="1882.608695652174" y="-267.1875"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="LcS-AY-Fah">
-            <objects>
-                <viewController id="QFR-rL-GDR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bOL-QU-ml0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UkT-mV-seC">
-                                <rect key="frame" x="37" y="95" width="300" height="324"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jHp-bC-YmL">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
-                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iYi-qw-V8F">
-                                        <rect key="frame" x="0.0" y="300" width="300" height="24"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="xxx" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eai-aO-gf1" customClass="UILikeButton" customModule="vk_lysakov" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="24"/>
-                                                <state key="normal" title="Button"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="OMt-JI-R5M"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wkc-GB-Ti9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="704.79999999999995" y="-620.23988005997012"/>
-        </scene>
         <!--Navigation Controller-->
-        <scene sceneID="M1l-ke-q4V">
+        <scene sceneID="eus-Nj-wv1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s95-fB-eLZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="newsfeed_outline_28" selectedImage="newsfeed_outline_28" id="2Ed-jj-paz"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4eN-r3-Gg0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="newsfeed_outline_28" selectedImage="newsfeed_outline_28" id="wd3-wY-nQ7"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cad-5e-8fG">
+                    <navigationItem key="navigationItem" id="EdA-tQ-Cjo"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fn3-Kp-w7G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8so-bL-oq1" kind="relationship" relationship="rootViewController" id="PK4-ja-16b"/>
+                        <segue destination="EGQ-Ss-ApF" kind="relationship" relationship="rootViewController" id="D5L-x8-qGs"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Acs-Ya-mqj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YMc-CI-ps3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1885.5999999999999" y="-940.47976011994012"/>
+            <point key="canvasLocation" x="1882" y="-1072"/>
         </scene>
     </scenes>
     <resources>
