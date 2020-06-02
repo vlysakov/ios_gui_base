@@ -7,7 +7,6 @@ class FeedViewCellFooter: UIView {
     
     public var likeCount = 0 {
         didSet {
-            print("likeCount = "+String(likeCount))
             likeButton.setTitle(likeCount == 0 ? "" : String(likeCount), for: .normal)
         }
     }

@@ -22,6 +22,10 @@ class TestData {
         let tu = User(login: "0", firstName: "Тестовый", secondName: "пользователь", avatar: UIImage(named: "01")!)
         tu.fotos.append(User.Photo("06"))
         users.append(tu)
+        let tu1 = User(login: "11", firstName: "Тестовый", secondName: "пользователь 2", avatar: UIImage(named: "02")!)
+        tu1.fotos.append(User.Photo("09"))
+        tu1.fotos.append(User.Photo("10"))
+        users.append(tu1)
         for i in logins.indices {
             let u = User(login: logins[i], firstName: firstNames[i], secondName: secondNames[i], avatar: UIImage(named: String(format: "%02d", i+1)))
             u.fotos = (0...Int.random(in: 1...16)).map { _ in String(format: "%02d", Int.random(in: 1...16)) }
