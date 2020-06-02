@@ -11,7 +11,6 @@ class FeedViewCellContent: UIView, UICollectionViewDelegateFlowLayout, UICollect
             }
         }
     }
-    private lazy var photoImageView = UIImageView()
     private var collectionView: UICollectionView?
     private var itemsPerRow: CGFloat = 4
     private let sectionInserts = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
@@ -28,35 +27,25 @@ class FeedViewCellContent: UIView, UICollectionViewDelegateFlowLayout, UICollect
     }
     
     private func configureUI() {
-        if images?.count == 1 {
-//            photoImageView.image = images[0]
-            addSubview(photoImageView)
-            photoImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let lt = UICollectionViewFlowLayout()
+        lt.scrollDirection = .vertical
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: lt)
+        if let cv = collectionView {
+            cv.backgroundColor = .systemBackground
+            cv.register(NewsViewCell.self, forCellWithReuseIdentifier: "NewsViewCell")
+            self.addSubview(cv)
+            cv.translatesAutoresizingMaskIntoConstraints = false
+            cv.delegate = self
+            cv.dataSource = self
             NSLayoutConstraint .activate([
-                photoImageView.topAnchor.constraint(equalTo: self.topAnchor),
-                photoImageView.leftAnchor.constraint(equalTo: self.leftAnchor),
-                photoImageView.rightAnchor.constraint(equalTo: self.rightAnchor),
-                photoImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+                cv.topAnchor.constraint(equalTo: self.topAnchor),
+                cv.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+                cv.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                cv.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             ])
-        } else {
-            let lt = UICollectionViewFlowLayout()
-            lt.scrollDirection = .horizontal
-            collectionView = UICollectionView(frame: .zero, collectionViewLayout: lt)
-            if let cv = collectionView {
-                cv.backgroundColor = .systemBackground
-                cv.register(NewsViewCell.self, forCellWithReuseIdentifier: "NewsViewCell")
-                self.addSubview(cv)
-                cv.translatesAutoresizingMaskIntoConstraints = false
-                cv.delegate = self
-                cv.dataSource = self
-                NSLayoutConstraint .activate([
-                    cv.topAnchor.constraint(equalTo: self.topAnchor),
-                    cv.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-                    cv.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-                    cv.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-                ])
-            }
         }
+        
     }
     
     // MARK:UICollectionViewDataSource
