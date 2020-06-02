@@ -78,6 +78,8 @@ class UsersViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        loadData()
+        tableView.reloadData()
         searchBar.endEditing(true)
         hideSearchBar()
 //        self.view.endEditing(true)
@@ -98,16 +100,17 @@ class UsersViewController: UITableViewController, UISearchBarDelegate {
     
     //MARK: SearchBar Animation
     
-    @IBOutlet weak var searchButton: UIBarButtonItem!
     @IBAction func searchButtonPressed(_ sender: Any) {
         showSearchBar()
     }
     var titleView: UIView?
+    var btnSearch: UIBarButtonItem?
     
     func showSearchBar() {
         searchBar.alpha = 0
         titleView = navigationItem.titleView
         navigationItem.titleView = searchBar
+        btnSearch = navigationItem.rightBarButtonItem
         navigationItem.setRightBarButton(nil, animated: true)
         
         UIView .animate(withDuration: 0.5,
@@ -117,9 +120,9 @@ class UsersViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func hideSearchBar() {
-        navigationItem.setRightBarButton(searchButton, animated: true)
+        navigationItem.setRightBarButton(btnSearch, animated: true)
         titleView?.alpha = 0
-        UIView .animate(withDuration: 0.3,
+        UIView .animate(withDuration: 0.5,
                         animations: {
                             self.navigationItem.titleView = self.titleView
                             self.titleView?.alpha = 1 },

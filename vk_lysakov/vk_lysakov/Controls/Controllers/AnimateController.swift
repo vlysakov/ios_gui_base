@@ -1,30 +1,38 @@
-//
-//  AnimateController.swift
-//  vk_lysakov
-//
-//  Created by Slava V. Lysakov on 02.06.2020.
-//  Copyright © 2020 Slava V. Lysakov. All rights reserved.
-//
-
 import UIKit
 
 class AnimateController: UIViewController {
 
+    @IBOutlet weak var greenImage: UIView!
+    @IBOutlet weak var redImage: UIView!
+    @IBOutlet weak var blueImage: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        greenImage.cornerRadius = greenImage.frame.height / 2
+        redImage.cornerRadius = redImage.frame.height / 2
+        blueImage.cornerRadius = blueImage.frame.height / 2
     }
     
 
-    /*
-    // MARK: - Navigation
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        UIView .animate(withDuration: 0.6,
+                        delay: 0,
+                        options: [.repeat, .autoreverse],
+                        animations:   { self.blueImage.alpha = 0  })
+        UIView .animate(withDuration: 0.8,
+                        delay: 0,
+                        options: [.repeat, .autoreverse],
+                        animations:   { self.redImage.alpha = 0  })
+        UIView .animate(withDuration: 1.1,
+                        delay: 0,
+                        options: [.repeat, .autoreverse],
+                        animations:   { self.greenImage.alpha = 0  })
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2),
+                                      execute: { self.performSegue(withIdentifier: "TabSegue", sender: nil)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        })
     }
-    */
 
 }

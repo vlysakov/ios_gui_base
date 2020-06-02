@@ -9,6 +9,63 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Animate Controller-->
+        <scene sceneID="btd-wh-iqJ">
+            <objects>
+                <viewController id="cg6-Er-6z2" customClass="AnimateController" customModule="vk_lysakov" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fIf-Zf-BQn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="EZM-bM-ibz">
+                                <rect key="frame" x="136.5" y="321.5" width="102" height="24"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3sj-tP-1Aq">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="Mb8-Um-Gj9"/>
+                                            <constraint firstAttribute="width" constant="24" id="OCa-uj-8xG"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jr-cn-YJ5">
+                                        <rect key="frame" x="39" y="0.0" width="24" height="24"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="Guc-SN-0bf"/>
+                                            <constraint firstAttribute="width" constant="24" id="UY9-ll-wal"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpK-u8-7XK">
+                                        <rect key="frame" x="78" y="0.0" width="24" height="24"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="Ahg-ea-bzn"/>
+                                            <constraint firstAttribute="height" constant="24" id="RPU-xY-u3b"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="EZM-bM-ibz" firstAttribute="centerX" secondItem="fIf-Zf-BQn" secondAttribute="centerX" id="hUt-ZA-rt1"/>
+                            <constraint firstItem="EZM-bM-ibz" firstAttribute="centerY" secondItem="fIf-Zf-BQn" secondAttribute="centerY" id="t41-d5-8h4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rxh-FX-wNm"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="obd-8J-k6B"/>
+                    <connections>
+                        <outlet property="blueImage" destination="3sj-tP-1Aq" id="Ph4-gt-e77"/>
+                        <outlet property="greenImage" destination="qpK-u8-7XK" id="kia-OK-h97"/>
+                        <outlet property="redImage" destination="9jr-cn-YJ5" id="iwG-2v-f6g"/>
+                        <segue destination="o1K-hz-0m6" kind="modal" identifier="TabSegue" modalPresentationStyle="fullScreen" id="7aq-sd-aPs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lmk-GS-AiS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="94" y="133"/>
+        </scene>
         <!--Login Form Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -121,7 +178,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBound" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="o1K-hz-0m6" kind="presentation" modalPresentationStyle="fullScreen" id="L7U-tX-xV2"/>
+                                            <segue destination="cg6-Er-6z2" kind="modal" modalPresentationStyle="fullScreen" id="0Rc-jA-Vjo"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -174,12 +231,13 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+            <point key="canvasLocation" x="-991" y="133"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="Nj5-zG-Cm5">
             <objects>
                 <tabBarController id="o1K-hz-0m6" customClass="CustomTabBarController" customModule="vk_lysakov" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="1u5-Cc-Clu"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aD8-rX-aVT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -432,9 +490,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="searchButton" destination="XJT-k4-GNb" id="nV6-MZ-iSo"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmQ-z4-jcu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

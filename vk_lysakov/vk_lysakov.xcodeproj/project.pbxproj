@@ -36,6 +36,7 @@
 		22F75ED42456ED4500FC2128 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F75ED22456ED4500FC2128 /* LaunchScreen.storyboard */; };
 		22F75EDF2456ED4500FC2128 /* vk_lysakovUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F75EDE2456ED4500FC2128 /* vk_lysakovUITests.swift */; };
 		22F75EEA2456EE1300FC2128 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F75EE92456EE1300FC2128 /* LoginFormController.swift */; };
+		F91AA5772486677A00786AF2 /* AnimateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91AA5762486677A00786AF2 /* AnimateController.swift */; };
 		F92253C224853D6800C90AE2 /* FeedsNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92253C124853D6800C90AE2 /* FeedsNewsViewController.swift */; };
 		F92253C424857C4900C90AE2 /* FeedViewCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92253C324857C4900C90AE2 /* FeedViewCellContent.swift */; };
 		F980600C248627EB00D7FB5C /* NewsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F980600B248627EB00D7FB5C /* NewsViewCell.swift */; };
@@ -88,6 +89,7 @@
 		22F75EDE2456ED4500FC2128 /* vk_lysakovUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vk_lysakovUITests.swift; sourceTree = "<group>"; };
 		22F75EE02456ED4500FC2128 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22F75EE92456EE1300FC2128 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
+		F91AA5762486677A00786AF2 /* AnimateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateController.swift; sourceTree = "<group>"; };
 		F92253C124853D6800C90AE2 /* FeedsNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsNewsViewController.swift; sourceTree = "<group>"; };
 		F92253C324857C4900C90AE2 /* FeedViewCellContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewCellContent.swift; sourceTree = "<group>"; };
 		F980600B248627EB00D7FB5C /* NewsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewCell.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				2283EB352472D99D00420A47 /* UserDetailCollectionViewController.swift */,
 				2221DDFF2475735700A4FF54 /* PhotoViewController.swift */,
 				F92253C124853D6800C90AE2 /* FeedsNewsViewController.swift */,
+				F91AA5762486677A00786AF2 /* AnimateController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				2234788D245ABF5500BBF650 /* StringExtensions.swift in Sources */,
 				22347891245AC0A600BBF650 /* UIViewExtension.swift in Sources */,
 				F9D0C0E124852B74007CB7AB /* FeedViewCellFooter.swift in Sources */,
+				F91AA5772486677A00786AF2 /* AnimateController.swift in Sources */,
 				22347893245AC89C00BBF650 /* ValidateTextField.swift in Sources */,
 				F9D0C0A12485000F007CB7AB /* FeedViewCell.swift in Sources */,
 				2283EB382472DF2500420A47 /* TestData.swift in Sources */,
