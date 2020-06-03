@@ -37,6 +37,10 @@
 		22F75EDF2456ED4500FC2128 /* vk_lysakovUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F75EDE2456ED4500FC2128 /* vk_lysakovUITests.swift */; };
 		22F75EEA2456EE1300FC2128 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F75EE92456EE1300FC2128 /* LoginFormController.swift */; };
 		F91AA5772486677A00786AF2 /* AnimateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91AA5762486677A00786AF2 /* AnimateController.swift */; };
+		F91AA5792487BB8900786AF2 /* BigPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91AA5782487BB8900786AF2 /* BigPhotoViewController.swift */; };
+		F91AA57B2487C6F500786AF2 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91AA57A2487C6F500786AF2 /* LaunchViewController.swift */; };
+		F91AA57D2487CD8500786AF2 /* AnimatorPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91AA57C2487CD8500786AF2 /* AnimatorPresent.swift */; };
+		F91AA57F248802B900786AF2 /* AnimatorDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91AA57E248802B900786AF2 /* AnimatorDismiss.swift */; };
 		F92253C224853D6800C90AE2 /* FeedsNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92253C124853D6800C90AE2 /* FeedsNewsViewController.swift */; };
 		F92253C424857C4900C90AE2 /* FeedViewCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92253C324857C4900C90AE2 /* FeedViewCellContent.swift */; };
 		F980600C248627EB00D7FB5C /* NewsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F980600B248627EB00D7FB5C /* NewsViewCell.swift */; };
@@ -90,6 +94,10 @@
 		22F75EE02456ED4500FC2128 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22F75EE92456EE1300FC2128 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 		F91AA5762486677A00786AF2 /* AnimateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateController.swift; sourceTree = "<group>"; };
+		F91AA5782487BB8900786AF2 /* BigPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigPhotoViewController.swift; sourceTree = "<group>"; };
+		F91AA57A2487C6F500786AF2 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		F91AA57C2487CD8500786AF2 /* AnimatorPresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorPresent.swift; sourceTree = "<group>"; };
+		F91AA57E248802B900786AF2 /* AnimatorDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorDismiss.swift; sourceTree = "<group>"; };
 		F92253C124853D6800C90AE2 /* FeedsNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsNewsViewController.swift; sourceTree = "<group>"; };
 		F92253C324857C4900C90AE2 /* FeedViewCellContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewCellContent.swift; sourceTree = "<group>"; };
 		F980600B248627EB00D7FB5C /* NewsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewCell.swift; sourceTree = "<group>"; };
@@ -149,6 +157,10 @@
 				2221DDFF2475735700A4FF54 /* PhotoViewController.swift */,
 				F92253C124853D6800C90AE2 /* FeedsNewsViewController.swift */,
 				F91AA5762486677A00786AF2 /* AnimateController.swift */,
+				F91AA5782487BB8900786AF2 /* BigPhotoViewController.swift */,
+				F91AA57A2487C6F500786AF2 /* LaunchViewController.swift */,
+				F91AA57C2487CD8500786AF2 /* AnimatorPresent.swift */,
+				F91AA57E248802B900786AF2 /* AnimatorDismiss.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -352,14 +364,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2234788F245ABFCA00BBF650 /* ValidationManager.swift in Sources */,
+				F91AA57B2487C6F500786AF2 /* LaunchViewController.swift in Sources */,
 				226572892465888F008C30DE /* UserViewCell.swift in Sources */,
 				2205F02D247EA79700C25458 /* UIFeedActionPanel.swift in Sources */,
 				22DB17A72477C7A700708A7F /* CustomTabBarController.swift in Sources */,
 				22657291246597F2008C30DE /* AddGroupViewCell.swift in Sources */,
 				22852FCE246E8FAC00FE9DA8 /* Group.swift in Sources */,
+				F91AA57F248802B900786AF2 /* AnimatorDismiss.swift in Sources */,
 				2221DE062475AE6500A4FF54 /* UILikeButton.swift in Sources */,
 				F9D0C0E324852BA1007CB7AB /* FeedViewCellHeader.swift in Sources */,
 				2265728D24658E51008C30DE /* GroupViewCell.swift in Sources */,
+				F91AA57D2487CD8500786AF2 /* AnimatorPresent.swift in Sources */,
 				22F75EEA2456EE1300FC2128 /* LoginFormController.swift in Sources */,
 				22987FFB2473B2AA0070EA89 /* UIAvatarImage.swift in Sources */,
 				2265728B24658E0F008C30DE /* GroupViewController.swift in Sources */,
@@ -369,6 +384,7 @@
 				F92253C224853D6800C90AE2 /* FeedsNewsViewController.swift in Sources */,
 				2221DE002475735700A4FF54 /* PhotoViewController.swift in Sources */,
 				F980600C248627EB00D7FB5C /* NewsViewCell.swift in Sources */,
+				F91AA5792487BB8900786AF2 /* BigPhotoViewController.swift in Sources */,
 				2234788D245ABF5500BBF650 /* StringExtensions.swift in Sources */,
 				22347891245AC0A600BBF650 /* UIViewExtension.swift in Sources */,
 				F9D0C0E124852B74007CB7AB /* FeedViewCellFooter.swift in Sources */,

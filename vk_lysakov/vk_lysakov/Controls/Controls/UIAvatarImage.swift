@@ -65,13 +65,13 @@ import UIKit
     }
     
     @objc func tapAction() {
-        print("Yes!!!")
-        UIView .animate(withDuration: 0.75,
+        let coeff = 0.75
+        UIView .animate(withDuration: coeff,
                         animations: {
-                            self.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+                            self.transform = CGAffineTransform.identity.scaledBy(x: CGFloat(coeff), y: CGFloat(coeff))
                         },
                         completion: { (finish) in
-                                    UIView.animate(withDuration: 0.75, animations: {
+                                    UIView .animate(withDuration: coeff, animations: {
                                     self.transform = CGAffineTransform.identity
                                 })
                         })

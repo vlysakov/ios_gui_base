@@ -6,7 +6,7 @@ class FeedsNewsViewController: UIViewController, UICollectionViewDelegateFlowLay
     let itemsPerRow: CGFloat = 1
     let sectionInserts = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     
-    fileprivate let collectionView: UICollectionView = {
+    let collectionView: UICollectionView = {
         let lt = UICollectionViewFlowLayout()
         lt.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: lt)
@@ -21,7 +21,6 @@ class FeedsNewsViewController: UIViewController, UICollectionViewDelegateFlowLay
         view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
-//        collectionView.backgroundColor = .lightGray
         NSLayoutConstraint .activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
@@ -40,9 +39,7 @@ class FeedsNewsViewController: UIViewController, UICollectionViewDelegateFlowLay
         cell.headerView.fullNameLabel.text = data[indexPath.item].fullName
         cell.headerView.profileImageView.image = data[indexPath.item].avatar
         cell.contentsView.images = data[indexPath.item].fotos.map {UIImage(named: $0.name)!}
-//        data[indexPath.item].fotos.forEach{
-//            cell.contentsView.images.append(UIImage(named: $0.name)!)
-//        }
+        cell.contentsView.parentView = collectionView
         return cell
     }
     

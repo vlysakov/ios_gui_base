@@ -19,9 +19,9 @@ class TestData {
         let secondNames = ["Иванов", "Петров", "Сидоров", "Табуреткин", "Форточкин", "Ржевский", "Семенов", "Попов", "Смирнов", "Кузнецов"]
         let logins = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
         
-        let tu = User(login: "0", firstName: "Тестовый", secondName: "пользователь", avatar: UIImage(named: "01")!)
-        tu.fotos.append(User.Photo("06"))
-        users.append(tu)
+//        let tu = User(login: "0", firstName: "Тестовый", secondName: "пользователь", avatar: UIImage(named: "01")!)
+//        tu.fotos.append(User.Photo("06"))
+//        users.append(tu)
         let tu1 = User(login: "11", firstName: "Тестовый", secondName: "пользователь 2", avatar: UIImage(named: "02")!)
         tu1.fotos.append(User.Photo("09"))
         tu1.fotos.append(User.Photo("10"))
