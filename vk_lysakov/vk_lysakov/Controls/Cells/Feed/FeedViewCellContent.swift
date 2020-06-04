@@ -63,13 +63,9 @@ class FeedViewCellContent: UIView, UICollectionViewDelegateFlowLayout, UICollect
     private var imageView = UIImageView()
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = BigPhotoViewController()
+        let vc = BigPhotoViewController(images: images!, index: indexPath.item)
         vc.view.frame = parentView!.convert(parentView!.frame, to: parentView)
-        vc.transitioningDelegate = vc
-        vc.modalPresentationStyle = .custom
         vc.startFrame = collectionView.convert(collectionView.layoutAttributesForItem(at: indexPath)!.frame, to: parentView?.superview)
-        vc.view.backgroundColor = .systemBackground
-        vc.imageView.image = images?[indexPath.item]
         parentViewController?.present(vc, animated: true, completion: nil)
     }
     

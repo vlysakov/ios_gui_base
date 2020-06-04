@@ -46,10 +46,20 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFy-Tp-mFh">
+                                <rect key="frame" x="128.5" y="299" width="118" height="69"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="M1H-xN-Ubm"/>
+                                    <constraint firstAttribute="height" constant="69" id="vRV-1z-twv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="dFy-Tp-mFh" firstAttribute="centerX" secondItem="fIf-Zf-BQn" secondAttribute="centerX" id="LuC-Th-eqG"/>
                             <constraint firstItem="EZM-bM-ibz" firstAttribute="centerX" secondItem="fIf-Zf-BQn" secondAttribute="centerX" id="hUt-ZA-rt1"/>
+                            <constraint firstItem="dFy-Tp-mFh" firstAttribute="centerY" secondItem="fIf-Zf-BQn" secondAttribute="centerY" id="jtn-7O-tfg"/>
                             <constraint firstItem="EZM-bM-ibz" firstAttribute="centerY" secondItem="fIf-Zf-BQn" secondAttribute="centerY" id="t41-d5-8h4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rxh-FX-wNm"/>
@@ -57,6 +67,7 @@
                     <navigationItem key="navigationItem" id="obd-8J-k6B"/>
                     <connections>
                         <outlet property="blueImage" destination="3sj-tP-1Aq" id="Ph4-gt-e77"/>
+                        <outlet property="cloudView" destination="dFy-Tp-mFh" id="fFR-Ga-3QA"/>
                         <outlet property="greenImage" destination="qpK-u8-7XK" id="kia-OK-h97"/>
                         <outlet property="redImage" destination="9jr-cn-YJ5" id="iwG-2v-f6g"/>
                         <segue destination="o1K-hz-0m6" kind="presentation" identifier="TabSegue" modalPresentationStyle="fullScreen" id="7aq-sd-aPs"/>
@@ -64,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lmk-GS-AiS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="94" y="133"/>
+            <point key="canvasLocation" x="93.599999999999994" y="132.68365817091455"/>
         </scene>
         <!--Login Form Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -648,55 +659,6 @@
             </objects>
             <point key="canvasLocation" x="2809" y="-1072"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="jGZ-gS-q78">
-            <objects>
-                <viewController id="ueq-mT-baL" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6Fh-6r-wGp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8o-Jv-i6T">
-                                <rect key="frame" x="331" y="16" width="28" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="A34-pJ-nMN"/>
-                                    <constraint firstAttribute="width" constant="28" id="Egc-o2-BgP"/>
-                                </constraints>
-                                <state key="normal" image="cancel_outline_28"/>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywT-gw-eoy">
-                                <rect key="frame" x="0.0" y="643" width="375" height="24"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="zG0-7h-V1R"/>
-                                </constraints>
-                            </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p4X-An-HPr">
-                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="375" id="EWf-g8-zah"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="p4X-An-HPr" firstAttribute="leading" secondItem="nTu-mK-O81" secondAttribute="leading" id="5Rd-bH-gO1"/>
-                            <constraint firstItem="p4X-An-HPr" firstAttribute="centerX" secondItem="6Fh-6r-wGp" secondAttribute="centerX" id="Cpj-53-oV1"/>
-                            <constraint firstItem="G8o-Jv-i6T" firstAttribute="top" secondItem="nTu-mK-O81" secondAttribute="top" constant="16" id="KOx-4g-2OQ"/>
-                            <constraint firstItem="nTu-mK-O81" firstAttribute="bottom" secondItem="ywT-gw-eoy" secondAttribute="bottom" id="X2z-gI-ORg"/>
-                            <constraint firstItem="nTu-mK-O81" firstAttribute="trailing" secondItem="ywT-gw-eoy" secondAttribute="trailing" id="ZrT-Fz-ePX"/>
-                            <constraint firstItem="ywT-gw-eoy" firstAttribute="leading" secondItem="nTu-mK-O81" secondAttribute="leading" id="epl-lN-dNi"/>
-                            <constraint firstItem="nTu-mK-O81" firstAttribute="trailing" secondItem="p4X-An-HPr" secondAttribute="trailing" id="lAc-Oz-Sx9"/>
-                            <constraint firstItem="p4X-An-HPr" firstAttribute="centerY" secondItem="6Fh-6r-wGp" secondAttribute="centerY" id="q5j-qr-3WV"/>
-                            <constraint firstItem="nTu-mK-O81" firstAttribute="trailing" secondItem="G8o-Jv-i6T" secondAttribute="trailing" constant="16" id="yLm-bg-OkC"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="nTu-mK-O81"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a5c-hx-nBB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3798" y="-1074"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="aRF-Rm-RfW">
             <objects>
@@ -742,7 +704,6 @@
         <image name="07" width="640" height="640"/>
         <image name="14" width="700" height="700"/>
         <image name="15" width="640" height="640"/>
-        <image name="cancel_outline_28" width="28" height="28"/>
         <image name="comment_outline_24" width="24" height="24"/>
         <image name="eye" catalog="system" width="128" height="81"/>
         <image name="eye.slash" catalog="system" width="128" height="86"/>
