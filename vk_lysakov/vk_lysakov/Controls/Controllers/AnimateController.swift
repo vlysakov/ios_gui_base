@@ -29,9 +29,9 @@ class AnimateController: UIViewController {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.fromValue = 0
         animation.toValue = 1
-        animation.duration = 5
+        animation.duration = 1
         shapeLayer.add(animation, forKey: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5),
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1),
                                       execute: { self.performSegue(withIdentifier: "TabSegue", sender: nil)
 
         })

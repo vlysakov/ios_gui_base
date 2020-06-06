@@ -49,7 +49,6 @@ class BigPhotoViewController: UIViewController, UIViewControllerTransitioningDel
         self.init()
         self.images = images
         self.index = index
-//        guard self.index >= self.images.count else { return }
         self.imageView.image = self.images[self.index]
         self.transitioningDelegate = self
         self.modalPresentationStyle = .custom
@@ -60,14 +59,6 @@ class BigPhotoViewController: UIViewController, UIViewControllerTransitioningDel
     //MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let leftSwipeGR = UISwipeGestureRecognizer(target: self, action: #selector(photoSwiped(_:)))
-//        leftSwipeGR.direction = .left
-//        let rightSwipeGR = UISwipeGestureRecognizer(target: self, action: #selector(photoSwiped(_:)))
-//        rightSwipeGR.direction = .right
-//
-//        imageView.addGestureRecognizer(leftSwipeGR)
-//        imageView.addGestureRecognizer(rightSwipeGR)
         let panGR = UIPanGestureRecognizer(target: self, action: #selector(viewPanned(_:)))
         view.addGestureRecognizer(panGR)
     }
@@ -136,48 +127,15 @@ class BigPhotoViewController: UIViewController, UIViewControllerTransitioningDel
     }
     
     //MARK: Animation methods
-    @objc func photoSwiped(_ swipeGestureRecognizer: UISwipeGestureRecognizer) {
-        switch swipeGestureRecognizer.direction {
-        case .left:
-            guard index + 1 <= images.count - 1 else { return }
-            imageView2.transform = CGAffineTransform(translationX: 1.3*self.imageView2.bounds.width, y: 150).concatenating(CGAffineTransform(scaleX: 1.3, y: 1.3))
-            imageView2.image = images[index + 1]
-            UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseInOut, animations: {
-                self.imageView.transform = CGAffineTransform(translationX: -1.5*self.imageView.bounds.width, y: -100).concatenating(CGAffineTransform(scaleX: 0.6, y: 0.6))
-                self.imageView2.transform = .identity
-            }) { _ in
-                self.index += 1
-                self.imageView.image = self.images[self.index]
-                self.imageView.transform = .identity
-                self.imageView2.image = nil
-            }
-        default:
-            guard index >= 1 else { return }
-            imageView2.transform = CGAffineTransform(translationX: -1.3*self.imageView2.bounds.width, y: 150).concatenating(CGAffineTransform(scaleX: 1.3, y: 1.3))
-            imageView2.image = images[index - 1]
-            UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseInOut, animations: {
-                self.imageView.transform = CGAffineTransform(translationX: 1.5*self.imageView.bounds.width, y: -100).concatenating(CGAffineTransform(scaleX: 0.6, y: 0.6))
-                self.imageView2.transform = .identity
-            }) { _ in
-                self.index -= 1
-                self.imageView.image = self.images[self.index]
-                self.imageView.transform = .identity
-                self.imageView2.image = nil
-            }
-        }
-    }
-    
     @objc func viewPanned(_ recognizer: UIPanGestureRecognizer) {
         switch recognizer.state {
         case .began:
-            print(recognizer.velocity(in: self.view).x)
             animationDirection = recognizer.velocity(in: self.view).x > 0 ? .right : .left
             let flag = CGFloat(animationDirection == .left ? -1 : 1)
             guard (index >= 1 && animationDirection == .right) || (index + 1 < images.count && animationDirection == .left) else {
                 propertyAnimator = nil
                 return
             }
-            print ("began")
             imageView2.transform = CGAffineTransform(translationX: -flag*self.imageView2.bounds.width, y: 0).concatenating(CGAffineTransform(scaleX: 1.2, y: 1.2))
             imageView2.image = images[index + Int(-flag)]
             propertyAnimator = UIViewPropertyAnimator(duration: 0.8, curve: .easeInOut)
@@ -188,8 +146,8 @@ class BigPhotoViewController: UIViewController, UIViewControllerTransitioningDel
             propertyAnimator.addCompletion { position in
                 switch position {
                 case .end:
-                    print("end cimoletion")
                     self.index -= Int(flag)
+                    guard self.index >= 0 && self.index < self.images.count else { return }
                     self.imageView.image = self.images[self.index]
                     self.imageView.transform = .identity
                     self.imageView2.image = nil
@@ -202,20 +160,11 @@ class BigPhotoViewController: UIViewController, UIViewControllerTransitioningDel
                 }
             }
             propertyAnimator.startAnimation()
-            print("animator created")
         case .changed:
-            print ("changed")
             guard let pa = self.propertyAnimator else { return }
-            let xx = recognizer.translation(in: self.view)
-            print (String.init(format: "x = %f y = %f", xx.x, xx.y))
-
-            let x = min(max(0, abs(xx.x) / self.view.bounds.width), 1)
-            print(String.init(format: "xx.x/200 = %f x = %f ", xx.x/self.view.bounds.width, x))
-            pa.fractionComplete = x //* (animationDirection == .left ? -1 : 1)
+            pa.fractionComplete = min(max(0, abs(recognizer.translation(in: self.view).x) / self.view.bounds.width), 1)//* (animationDirection == .left ? -1 : 1)
         case .ended:
-            print ("ended")
             guard let pa = self.propertyAnimator else { return }
-            print(String.init(format: "fractionComplete = %f", pa.fractionComplete))
             if pa.fractionComplete > 0.33 {
                 pa.continueAnimation(withTimingParameters: nil, durationFactor: 0.5)
             } else {
@@ -223,7 +172,6 @@ class BigPhotoViewController: UIViewController, UIViewControllerTransitioningDel
                 pa.continueAnimation(withTimingParameters: nil, durationFactor: 0.5)
             }
         default:
-            print ("default")
             break
         }
     }

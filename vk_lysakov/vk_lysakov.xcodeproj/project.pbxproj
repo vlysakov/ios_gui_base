@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2205F02D247EA79700C25458 /* UIFeedActionPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205F02C247EA79700C25458 /* UIFeedActionPanel.swift */; };
 		2221DE002475735700A4FF54 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221DDFF2475735700A4FF54 /* PhotoViewController.swift */; };
 		2221DE062475AE6500A4FF54 /* UILikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221DE052475AE6500A4FF54 /* UILikeButton.swift */; };
 		2234788D245ABF5500BBF650 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2234788C245ABF5500BBF650 /* StringExtensions.swift */; };
@@ -60,7 +59,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2205F02C247EA79700C25458 /* UIFeedActionPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFeedActionPanel.swift; sourceTree = "<group>"; };
 		2221DDFF2475735700A4FF54 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		2221DE052475AE6500A4FF54 /* UILikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILikeButton.swift; sourceTree = "<group>"; };
 		2234788C245ABF5500BBF650 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 				2221DE052475AE6500A4FF54 /* UILikeButton.swift */,
 				22DB17A62477C7A700708A7F /* CustomTabBarController.swift */,
 				22DB17A82477CC3B00708A7F /* UIShareButton.swift */,
-				2205F02C247EA79700C25458 /* UIFeedActionPanel.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -366,7 +363,6 @@
 				2234788F245ABFCA00BBF650 /* ValidationManager.swift in Sources */,
 				F91AA57B2487C6F500786AF2 /* LaunchViewController.swift in Sources */,
 				226572892465888F008C30DE /* UserViewCell.swift in Sources */,
-				2205F02D247EA79700C25458 /* UIFeedActionPanel.swift in Sources */,
 				22DB17A72477C7A700708A7F /* CustomTabBarController.swift in Sources */,
 				22657291246597F2008C30DE /* AddGroupViewCell.swift in Sources */,
 				22852FCE246E8FAC00FE9DA8 /* Group.swift in Sources */,

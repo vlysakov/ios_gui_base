@@ -13,8 +13,6 @@ class UsersViewController: UITableViewController, UISearchBarDelegate {
         searchBar.sizeToFit()
         searchBar.showsCancelButton = true
         searchBar.searchBarStyle = .minimal
-        //navigationItem.titleView = searchBar
-        //tableView.tableHeaderView = searchBar
         navigationItem.hidesSearchBarWhenScrolling = true
         self.tableView.contentInset.bottom = self.tabBarController?.tabBar.frame.height ?? 0
         loadData()
@@ -31,7 +29,6 @@ class UsersViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return users[sections[section]]?.count ?? 0
         return users[section].count
     }
 
@@ -68,13 +65,11 @@ class UsersViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-//        self.view.endEditing(true)
         searchBar.endEditing(true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         searchBar.endEditing(true)
-//        self.view.endEditing(true)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -82,7 +77,6 @@ class UsersViewController: UITableViewController, UISearchBarDelegate {
         tableView.reloadData()
         searchBar.endEditing(true)
         hideSearchBar()
-//        self.view.endEditing(true)
     }
 
     func loadData(_ searchText: String? = nil) {
