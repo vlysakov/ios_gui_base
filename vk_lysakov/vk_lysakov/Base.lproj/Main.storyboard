@@ -659,10 +659,10 @@
             </objects>
             <point key="canvasLocation" x="2809" y="-1072"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Angle Navigation Controller-->
         <scene sceneID="aRF-Rm-RfW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LLo-5b-jGv" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LLo-5b-jGv" customClass="AngleNavigationController" customModule="vk_lysakov" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="users_outline_28" selectedImage="users_outline_28" id="9WC-jA-Zkl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xcf-Rl-CYP">

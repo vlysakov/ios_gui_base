@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2221DE002475735700A4FF54 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221DDFF2475735700A4FF54 /* PhotoViewController.swift */; };
 		2221DE062475AE6500A4FF54 /* UILikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221DE052475AE6500A4FF54 /* UILikeButton.swift */; };
+		2229C45D248C0CBC008F67F3 /* PushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2229C45C248C0CBC008F67F3 /* PushAnimator.swift */; };
+		2229C45F248C0CE5008F67F3 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2229C45E248C0CE5008F67F3 /* PopAnimator.swift */; };
+		2229C461248C0DF2008F67F3 /* AngleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2229C460248C0DF2008F67F3 /* AngleNavigationController.swift */; };
 		2234788D245ABF5500BBF650 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2234788C245ABF5500BBF650 /* StringExtensions.swift */; };
 		2234788F245ABFCA00BBF650 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2234788E245ABFCA00BBF650 /* ValidationManager.swift */; };
 		22347891245AC0A600BBF650 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22347890245AC0A600BBF650 /* UIViewExtension.swift */; };
@@ -61,6 +64,9 @@
 /* Begin PBXFileReference section */
 		2221DDFF2475735700A4FF54 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		2221DE052475AE6500A4FF54 /* UILikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILikeButton.swift; sourceTree = "<group>"; };
+		2229C45C248C0CBC008F67F3 /* PushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAnimator.swift; sourceTree = "<group>"; };
+		2229C45E248C0CE5008F67F3 /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
+		2229C460248C0DF2008F67F3 /* AngleNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleNavigationController.swift; sourceTree = "<group>"; };
 		2234788C245ABF5500BBF650 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		2234788E245ABFCA00BBF650 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
 		22347890245AC0A600BBF650 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -122,6 +128,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2229C45B248C0C98008F67F3 /* Animators */ = {
+			isa = PBXGroup;
+			children = (
+				F91AA57C2487CD8500786AF2 /* AnimatorPresent.swift */,
+				F91AA57E248802B900786AF2 /* AnimatorDismiss.swift */,
+				2229C45C248C0CBC008F67F3 /* PushAnimator.swift */,
+				2229C45E248C0CE5008F67F3 /* PopAnimator.swift */,
+			);
+			path = Animators;
+			sourceTree = "<group>";
+		};
 		224392922459BA94003A305D /* Controls */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +165,7 @@
 		2272629424751E3E00F7EFDB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2229C45B248C0C98008F67F3 /* Animators */,
 				2265728624658021008C30DE /* UsersViewController.swift */,
 				2265728A24658E0F008C30DE /* GroupViewController.swift */,
 				2265728E24659672008C30DE /* AddGroupViewController.swift */,
@@ -157,8 +175,7 @@
 				F91AA5762486677A00786AF2 /* AnimateController.swift */,
 				F91AA5782487BB8900786AF2 /* BigPhotoViewController.swift */,
 				F91AA57A2487C6F500786AF2 /* LaunchViewController.swift */,
-				F91AA57C2487CD8500786AF2 /* AnimatorPresent.swift */,
-				F91AA57E248802B900786AF2 /* AnimatorDismiss.swift */,
+				2229C460248C0DF2008F67F3 /* AngleNavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -376,8 +393,10 @@
 				2265728B24658E0F008C30DE /* GroupViewController.swift in Sources */,
 				22F75EC82456ED4300FC2128 /* AppDelegate.swift in Sources */,
 				2265728F24659672008C30DE /* AddGroupViewController.swift in Sources */,
+				2229C45D248C0CBC008F67F3 /* PushAnimator.swift in Sources */,
 				22852FCC246E8CFB00FE9DA8 /* User.swift in Sources */,
 				F92253C224853D6800C90AE2 /* FeedsNewsViewController.swift in Sources */,
+				2229C461248C0DF2008F67F3 /* AngleNavigationController.swift in Sources */,
 				2221DE002475735700A4FF54 /* PhotoViewController.swift in Sources */,
 				F980600C248627EB00D7FB5C /* NewsViewCell.swift in Sources */,
 				F91AA5792487BB8900786AF2 /* BigPhotoViewController.swift in Sources */,
@@ -387,6 +406,7 @@
 				F91AA5772486677A00786AF2 /* AnimateController.swift in Sources */,
 				22347893245AC89C00BBF650 /* ValidateTextField.swift in Sources */,
 				F9D0C0A12485000F007CB7AB /* FeedViewCell.swift in Sources */,
+				2229C45F248C0CE5008F67F3 /* PopAnimator.swift in Sources */,
 				2283EB382472DF2500420A47 /* TestData.swift in Sources */,
 				2283EB342472D8CF00420A47 /* UserDetailViewCell.swift in Sources */,
 				22DB17A92477CC3B00708A7F /* UIShareButton.swift in Sources */,
