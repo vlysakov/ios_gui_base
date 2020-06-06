@@ -146,8 +146,9 @@ class BigPhotoViewController: UIViewController, UIViewControllerTransitioningDel
             propertyAnimator.addCompletion { position in
                 switch position {
                 case .end:
+                    let i = self.index - Int(flag)
+                    guard i >= 0 && i < self.images.count else { return }
                     self.index -= Int(flag)
-                    guard self.index >= 0 && self.index < self.images.count else { return }
                     self.imageView.image = self.images[self.index]
                     self.imageView.transform = .identity
                     self.imageView2.image = nil
