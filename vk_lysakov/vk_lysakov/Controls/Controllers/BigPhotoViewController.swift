@@ -1,6 +1,6 @@
 import UIKit
 
-class BigPhotoViewController: UIViewController, UIViewControllerTransitioningDelegate {
+class BigPhotoViewController: UIViewController, UIViewControllerTransitioningDelegate, UIGestureRecognizerDelegate {
     enum AnimationDirection {
         case left
         case right
@@ -43,6 +43,8 @@ class BigPhotoViewController: UIViewController, UIViewControllerTransitioningDel
     
     private var propertyAnimator: UIViewPropertyAnimator!
     private var animationDirection: AnimationDirection = .left
+    private var panGR: UIPanGestureRecognizer!
+    private var downSwipeGR: UISwipeGestureRecognizer!
     
     //MARK: Initializers
     convenience init(images: [UIImage], index: Int) {
@@ -55,12 +57,17 @@ class BigPhotoViewController: UIViewController, UIViewControllerTransitioningDel
         self.view.backgroundColor = .systemBackground
     }
     
-    
     //MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        let panGR = UIPanGestureRecognizer(target: self, action: #selector(viewPanned(_:)))
+        panGR = UIPanGestureRecognizer(target: self, action: #selector(viewPanned(_:)))
+        panGR.delegate = self
+        panGR.maximumNumberOfTouches = 2
+        downSwipeGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
+        downSwipeGR.delegate = self
+        downSwipeGR.direction = .down
         view.addGestureRecognizer(panGR)
+        view.addGestureRecognizer(downSwipeGR)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,14 +81,6 @@ class BigPhotoViewController: UIViewController, UIViewControllerTransitioningDel
     override func loadView() {
         super.loadView()
         configureUI()
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        AnimatorDismiss(self.startFrame)
-    }
-    
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        AnimatorPresent(self.startFrame)
     }
     
     private func configureUI() {
@@ -122,8 +121,31 @@ class BigPhotoViewController: UIViewController, UIViewControllerTransitioningDel
         likePanel.isHidden = true
     }
     
+    
+    //MARK: UIViewControllerTransitioningDelegate
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        AnimatorDismiss(self.startFrame)
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        AnimatorPresent(self.startFrame)
+    }
+
+    //MARK: Exite methods
     @objc private func closeButtonPressed (_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func swipeDown(_ recognizer: UISwipeGestureRecognizer) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    //MARK: UIGestureRecognizerDelegate
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+       if gestureRecognizer == self.panGR! && otherGestureRecognizer == self.downSwipeGR! {
+          return true
+       }
+       return false
     }
     
     //MARK: Animation methods
@@ -139,15 +161,16 @@ class BigPhotoViewController: UIViewController, UIViewControllerTransitioningDel
             imageView2.transform = CGAffineTransform(translationX: -flag*self.imageView2.bounds.width, y: 0).concatenating(CGAffineTransform(scaleX: 1.2, y: 1.2))
             imageView2.image = images[index + Int(-flag)]
             propertyAnimator = UIViewPropertyAnimator(duration: 0.8, curve: .easeInOut)
-            propertyAnimator.addAnimations({
+            propertyAnimator.addAnimations{
                 self.imageView.transform = CGAffineTransform(translationX: flag*self.imageView.bounds.width, y: 0).concatenating(CGAffineTransform(scaleX: 0.7, y: 0.7))
                 self.imageView2.transform = .identity
-        }, delayFactor: 0)
+        }//, delayFactor: 0)
             propertyAnimator.addCompletion { position in
                 switch position {
                 case .end:
+                    let i = self.index - Int(flag)
+                    guard i >= 0 && i < self.images.count else { return }
                     self.index -= Int(flag)
-                    guard self.index >= 0 && self.index < self.images.count else { return }
                     self.imageView.image = self.images[self.index]
                     self.imageView.transform = .identity
                     self.imageView2.image = nil
