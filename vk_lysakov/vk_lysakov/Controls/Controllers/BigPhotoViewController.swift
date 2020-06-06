@@ -167,88 +167,63 @@ class BigPhotoViewController: UIViewController, UIViewControllerTransitioningDel
         }
     }
     
-    @objc func viewPanned(_ panGestureRecognizer: UIPanGestureRecognizer) {
-        switch panGestureRecognizer.state {
+    @objc func viewPanned(_ recognizer: UIPanGestureRecognizer) {
+        switch recognizer.state {
         case .began:
-            print(panGestureRecognizer.translation(in: view).x)
-            if panGestureRecognizer.translation(in: view).x > 0 {
-                guard index >= 1 else { return }
-                
-                animationDirection = .right
-                // начальная трансформация
-                imageView2.transform = CGAffineTransform(translationX: -1.3*self.imageView2.bounds.width, y: 150).concatenating(CGAffineTransform(scaleX: 1.3, y: 1.3))
-                imageView2.image = images[index - 1]
-                // создаем аниматор для движения направо
-                propertyAnimator = UIViewPropertyAnimator(duration: 0.7, curve: .easeInOut, animations: {
-                    self.imageView.transform = CGAffineTransform(translationX: 1.5*self.imageView.bounds.width, y: -100).concatenating(CGAffineTransform(scaleX: 0.6, y: 0.6))
-                    self.imageView2.transform = .identity
-                })
-                print("Right animation property animator has been created")
-                propertyAnimator.addCompletion { position in
-                    switch position {
-                    case .end:
-                        self.index -= 1
-                        self.imageView.image = self.images[self.index]
-                        self.imageView.transform = .identity
-                        self.imageView2.image = nil
-                    case .start:
-                        self.imageView2.transform = CGAffineTransform(translationX: -1.3*self.imageView2.bounds.width, y: 150).concatenating(CGAffineTransform(scaleX: 1.3, y: 1.3))
-                    case .current:
-                        break
-                    @unknown default:
-                        break
-                    }
-                }
-            } else {
-                // создаем аниматор для движения налево
-                guard index + 1 <= images.count - 1 else { return }
-                
-                animationDirection = .left
-                imageView2.image = images[index + 1]
-                // начальная трансформация
-                imageView2.transform = CGAffineTransform(translationX: 1.3*self.imageView2.bounds.width, y: 150).concatenating(CGAffineTransform(scaleX: 1.3, y: 1.3))
-                // создаем аниматор для движения направо
-                propertyAnimator = UIViewPropertyAnimator(duration: 0.7, curve: .easeInOut, animations: {
-                    self.imageView.transform = CGAffineTransform(translationX: -1.5*self.imageView.bounds.width, y: -100).concatenating(CGAffineTransform(scaleX: 0.6, y: 0.6))
-                    self.imageView2.transform = .identity
-                })
-                print("Left animation property animator has been created")
-                propertyAnimator.addCompletion { position in
-                    switch position {
-                    case .end:
-                        self.index += 1
-                        self.imageView.image = self.images[self.index]
-                        self.imageView.transform = .identity
-                        self.imageView2.image = nil
-                    case .start:
-                        self.imageView2.transform = CGAffineTransform(translationX: 1.3*self.imageView2.bounds.width, y: 150).concatenating(CGAffineTransform(scaleX: 1.3, y: 1.3))
-                    case .current:
-                        break
-                    @unknown default:
-                        break
-                    }
+            print(recognizer.velocity(in: self.view).x)
+            animationDirection = recognizer.velocity(in: self.view).x > 0 ? .right : .left
+            let flag = CGFloat(animationDirection == .left ? -1 : 1)
+            guard (index >= 1 && animationDirection == .right) || (index + 1 < images.count && animationDirection == .left) else {
+                propertyAnimator = nil
+                return
+            }
+            print ("began")
+            imageView2.transform = CGAffineTransform(translationX: -flag*self.imageView2.bounds.width, y: 0).concatenating(CGAffineTransform(scaleX: 1.2, y: 1.2))
+            imageView2.image = images[index + Int(-flag)]
+            propertyAnimator = UIViewPropertyAnimator(duration: 0.8, curve: .easeInOut)
+            propertyAnimator.addAnimations({
+                self.imageView.transform = CGAffineTransform(translationX: flag*self.imageView.bounds.width, y: 0).concatenating(CGAffineTransform(scaleX: 0.7, y: 0.7))
+                self.imageView2.transform = .identity
+        }, delayFactor: 0)
+            propertyAnimator.addCompletion { position in
+                switch position {
+                case .end:
+                    print("end cimoletion")
+                    self.index -= Int(flag)
+                    self.imageView.image = self.images[self.index]
+                    self.imageView.transform = .identity
+                    self.imageView2.image = nil
+                case .start:
+                    self.imageView2.transform = CGAffineTransform(translationX: -flag*self.imageView2.bounds.width, y: 0).concatenating(CGAffineTransform(scaleX: 1.2, y: 1.2))
+                case .current:
+                    break
+                @unknown default:
+                    break
                 }
             }
+            propertyAnimator.startAnimation()
+            print("animator created")
         case .changed:
-            guard let propertyAnimator = self.propertyAnimator else { return }
-            print (String.init(format: "x = %f y = %f", panGestureRecognizer.translation(in: view).x, panGestureRecognizer.translation(in: view).y))
-            switch animationDirection {
-            case .right:
-                let percent = min(max(0, panGestureRecognizer.translation(in: view).x / view.frame.width), 1)
-                propertyAnimator.fractionComplete = percent
-            case .left:
-                let percent = min(max(0, -panGestureRecognizer.translation(in: view).x / view.frame.width), 1)
-                propertyAnimator.fractionComplete = percent
-            }
+            print ("changed")
+            guard let pa = self.propertyAnimator else { return }
+            let xx = recognizer.translation(in: self.view)
+            print (String.init(format: "x = %f y = %f", xx.x, xx.y))
+
+            let x = min(max(0, abs(xx.x) / self.view.bounds.width), 1)
+            print(String.init(format: "xx.x/200 = %f x = %f ", xx.x/self.view.bounds.width, x))
+            pa.fractionComplete = x //* (animationDirection == .left ? -1 : 1)
         case .ended:
-            guard let propertyAnimator = self.propertyAnimator else { return }
-            if propertyAnimator.fractionComplete > 0.33 {
-                propertyAnimator.continueAnimation(withTimingParameters: nil, durationFactor: 0.5)
+            print ("ended")
+            guard let pa = self.propertyAnimator else { return }
+            print(String.init(format: "fractionComplete = %f", pa.fractionComplete))
+            if pa.fractionComplete > 0.33 {
+                pa.continueAnimation(withTimingParameters: nil, durationFactor: 0.5)
             } else {
-                propertyAnimator.isReversed = true
-                propertyAnimator.continueAnimation(withTimingParameters: nil, durationFactor: 0.5)
+                pa.isReversed = true
+                pa.continueAnimation(withTimingParameters: nil, durationFactor: 0.5)
             }
         default:
+            print ("default")
             break
         }
     }
