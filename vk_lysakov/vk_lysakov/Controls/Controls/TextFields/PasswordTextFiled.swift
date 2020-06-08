@@ -1,11 +1,3 @@
-//
-//  PasswordTextField.swift
-//  vk_lysakov
-//
-//  Created by Slava V. Lysakov on 29.04.2020.
-//  Copyright © 2020 Slava V. Lysakov. All rights reserved.
-//
-
 import UIKit
 
 @IBDesignable class PasswordTextField: ValidateTextField {
