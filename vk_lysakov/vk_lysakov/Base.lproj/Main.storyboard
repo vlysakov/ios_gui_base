@@ -568,12 +568,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ayn-8T-f0q">
-                                <rect key="frame" x="0.0" y="173.5" width="375" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="kJT-JD-6vF"/>
-                                </constraints>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rbO-me-qbl">
                                 <rect key="frame" x="0.0" y="623" width="375" height="24"/>
                                 <subviews>
@@ -596,6 +590,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7T-xO-lRo" customClass="UIShareButton" customModule="vk_lysakov" customModuleProvider="target">
                                         <rect key="frame" x="250" y="0.0" width="125" height="24"/>
                                         <state key="normal" image="share_outline_24"/>
+                                        <connections>
+                                            <action selector="shareButtonPressed:" destination="Fr7-rK-APM" eventType="touchUpInside" id="sgJ-1j-7G2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -605,19 +602,16 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Ayn-8T-f0q" firstAttribute="leading" secondItem="wey-o5-izm" secondAttribute="leading" id="7Ih-7h-UOs"/>
                             <constraint firstItem="wey-o5-izm" firstAttribute="bottom" secondItem="rbO-me-qbl" secondAttribute="bottom" id="Dt9-dl-uDI"/>
-                            <constraint firstItem="Ayn-8T-f0q" firstAttribute="trailing" secondItem="wey-o5-izm" secondAttribute="trailing" id="gmk-ek-z5H"/>
                             <constraint firstItem="rbO-me-qbl" firstAttribute="leading" secondItem="wey-o5-izm" secondAttribute="leading" id="kIX-gY-B7D"/>
                             <constraint firstItem="wey-o5-izm" firstAttribute="trailing" secondItem="rbO-me-qbl" secondAttribute="trailing" id="qqm-26-uU1"/>
-                            <constraint firstItem="Ayn-8T-f0q" firstAttribute="centerY" secondItem="nN9-kf-3dh" secondAttribute="centerY" id="rQP-Uj-S7F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wey-o5-izm"/>
                     </view>
                     <connections>
                         <outlet property="likeButton" destination="Hg1-bD-pnN" id="Vjv-0e-gmi"/>
-                        <outlet property="photoImageView" destination="Ayn-8T-f0q" id="0Cy-Dc-iBL"/>
                         <outlet property="shareButton" destination="p7T-xO-lRo" id="QPS-gI-WHK"/>
+                        <outlet property="stackView" destination="rbO-me-qbl" id="v7N-Ss-lDV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XB3-dp-h0C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -702,7 +696,6 @@
     <resources>
         <image name="02" width="440" height="486"/>
         <image name="07" width="640" height="640"/>
-        <image name="14" width="700" height="700"/>
         <image name="15" width="640" height="640"/>
         <image name="comment_outline_24" width="24" height="24"/>
         <image name="eye" catalog="system" width="128" height="81"/>

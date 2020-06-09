@@ -31,7 +31,8 @@ class UserDetailCollectionViewController: UICollectionViewController {
         if segue.identifier == "pickPhotoSegue" {
             let photoVC = segue.destination as! PhotoViewController
             let indexPaths = self.collectionView!.indexPathsForSelectedItems?.first
-            photoVC.photo = user?.fotos[indexPaths!.item]
+            photoVC.user = self.user
+            photoVC.index = indexPaths!.item
         }
     }
 

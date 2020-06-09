@@ -1,11 +1,11 @@
 import UIKit
 
+enum AnimationDirection {
+    case left
+    case right
+}
+
 class BigPhotoViewController: UIViewController, UIViewControllerTransitioningDelegate, UIGestureRecognizerDelegate {
-    enum AnimationDirection {
-        case left
-        case right
-    }
-    
     //MARK: Variables and properties
     var startFrame: CGRect!
     
@@ -164,7 +164,7 @@ class BigPhotoViewController: UIViewController, UIViewControllerTransitioningDel
             propertyAnimator.addAnimations{
                 self.imageView.transform = CGAffineTransform(translationX: flag*self.imageView.bounds.width, y: 0).concatenating(CGAffineTransform(scaleX: 0.7, y: 0.7))
                 self.imageView2.transform = .identity
-        }//, delayFactor: 0)
+        }
             propertyAnimator.addCompletion { position in
                 switch position {
                 case .end:

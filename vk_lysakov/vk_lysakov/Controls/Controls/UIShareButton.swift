@@ -30,7 +30,7 @@ extension UIResponder {
     override var intrinsicContentSize: CGSize { CGSize(width: 64.0, height: 24.0) }
     
     
-    @objc private func buttonPressed (_ sender: Any) {
+    @objc func buttonPressed (_ sender: Any) {
         if let img = sharedImage {
             let shareController = UIActivityViewController(activityItems: [img], applicationActivities: nil)
             self.parentViewController?.present(shareController, animated: true, completion: nil)
